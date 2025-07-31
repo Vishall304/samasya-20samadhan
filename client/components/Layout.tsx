@@ -151,16 +151,15 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="text-sm font-semibold">Support</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/help" className="hover:text-foreground">Help Center</Link></li>
-                <li><Link to="/contact" className="hover:text-foreground">Contact Us</Link></li>
-                <li><Link to="/faq" className="hover:text-foreground">FAQ</Link></li>
+                <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
+                <li><Link to="/emergency" className="hover:text-foreground">Emergency Helplines</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold">Legal</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="hover:text-foreground">Terms of Service</Link></li>
+                <li><Link to="/about" className="hover:text-foreground">About</Link></li>
+                <li><Link to="/terms" className="hover:text-foreground">Terms</Link></li>
               </ul>
             </div>
           </div>
