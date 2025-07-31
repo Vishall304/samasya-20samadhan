@@ -21,7 +21,16 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/experts" element={<Experts />} />
+          <Route
+            path="/mentor"
+            element={
+              <Placeholder
+                title="Talk to a Mentor"
+                description="Connect with caring mentors who understand your struggles"
+                suggestedAction={{ text: "Submit Problem First", href: "/#submit-problem" }}
+              />
+            }
+          />
           <Route 
             path="/submit" 
             element={
