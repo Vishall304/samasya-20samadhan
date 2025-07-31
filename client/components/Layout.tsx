@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
   const navigation = [
     { name: "Home", href: "/", icon: Home },
     { name: "Submit Problem", href: "/submit", icon: MessageSquare },
-    { name: "Find Experts", href: "/experts", icon: Users },
+    { name: "Talk to Mentor", href: "/mentor", icon: Users },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -26,12 +26,10 @@ export default function Layout({ children }: LayoutProps) {
         <div className="container flex h-16 items-center">
           <div className="mr-4 hidden md:flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <MessageSquare className="h-4 w-4 text-primary-foreground" />
+              <div className="text-2xl font-bold">
+                <span style={{color: '#6C63FF'}}>Samasya</span>
+                <span style={{color: '#FFDAB9'}}>Samadhan</span>
               </div>
-              <span className="hidden font-bold sm:inline-block text-xl">
-                ExpertConnect
-              </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               {navigation.map((item) => {
@@ -68,10 +66,10 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Mobile logo */}
           <Link to="/" className="flex items-center space-x-2 md:hidden">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <MessageSquare className="h-4 w-4 text-primary-foreground" />
+            <div className="text-xl font-bold">
+              <span style={{color: '#6C63FF'}}>Samasya</span>
+              <span style={{color: '#FFDAB9'}}>Samadhan</span>
             </div>
-            <span className="font-bold text-xl">ExpertConnect</span>
           </Link>
 
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
@@ -133,20 +131,20 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <div className="h-6 w-6 rounded bg-primary flex items-center justify-center">
-                  <MessageSquare className="h-3 w-3 text-primary-foreground" />
+                <div className="text-lg font-bold">
+                  <span style={{color: '#6C63FF'}}>Samasya</span>
+                  <span style={{color: '#FFDAB9'}}>Samadhan</span>
                 </div>
-                <span className="font-bold">ExpertConnect</span>
               </div>
               <p className="text-sm text-muted-foreground max-w-xs">
-                Connect with experts and get solutions to your problems.
+                Every problem has a solution. Get help safely and confidentially.
               </p>
             </div>
             <div>
               <h3 className="text-sm font-semibold">Platform</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li><Link to="/submit" className="hover:text-foreground">Submit Problem</Link></li>
-                <li><Link to="/experts" className="hover:text-foreground">Find Experts</Link></li>
+                <li><Link to="/mentor" className="hover:text-foreground">Talk to Mentor</Link></li>
                 <li><Link to="/how-it-works" className="hover:text-foreground">How It Works</Link></li>
               </ul>
             </div>
@@ -167,7 +165,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
           <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 ExpertConnect. All rights reserved.</p>
+            <p>&copy; 2024 SamasyaSamadhan. Made with care by Vishal</p>
           </div>
         </div>
       </footer>
