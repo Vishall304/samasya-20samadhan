@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
-import { ArrowRight, CheckCircle, MessageSquare, Users, Clock, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageSquare, Users, Clock, Star, Brain, GraduationCap, Briefcase, Heart, Gavel, TrendingUp, User, Home, Lightbulb, Code } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
