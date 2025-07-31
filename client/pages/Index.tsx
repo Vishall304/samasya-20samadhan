@@ -175,12 +175,6 @@ export default function Index() {
                   color: "bg-blue-100 text-blue-600"
                 },
                 {
-                  icon: Briefcase,
-                  title: "Business & Career",
-                  description: "Entrepreneurship, job search, professional growth",
-                  color: "bg-green-100 text-green-600"
-                },
-                {
                   icon: Code,
                   title: "Technology",
                   description: "Software development, IT solutions, tech consulting",
@@ -191,18 +185,6 @@ export default function Index() {
                   title: "Health & Wellness",
                   description: "Fitness planning, nutrition advice, lifestyle changes",
                   color: "bg-red-100 text-red-600"
-                },
-                {
-                  icon: Gavel,
-                  title: "Legal Advice",
-                  description: "Contract review, legal consultation, compliance help",
-                  color: "bg-orange-100 text-orange-600"
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Finance & Investment",
-                  description: "Financial planning, investment strategies, budgeting",
-                  color: "bg-emerald-100 text-emerald-600"
                 },
                 {
                   icon: Home,
