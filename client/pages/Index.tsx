@@ -148,6 +148,114 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Problem Categories */}
+      <section className="py-20 sm:py-32 bg-muted/20">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              What Problems Can We Solve?
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Our experts cover a wide range of fields to help you with any challenge
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-6xl">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  icon: Brain,
+                  title: "Mental Health",
+                  description: "Anxiety, stress management, counseling, therapy guidance",
+                  color: "bg-pink-100 text-pink-600"
+                },
+                {
+                  icon: GraduationCap,
+                  title: "Education & Learning",
+                  description: "Study strategies, career guidance, skill development",
+                  color: "bg-blue-100 text-blue-600"
+                },
+                {
+                  icon: Briefcase,
+                  title: "Business & Career",
+                  description: "Entrepreneurship, job search, professional growth",
+                  color: "bg-green-100 text-green-600"
+                },
+                {
+                  icon: Code,
+                  title: "Technology",
+                  description: "Software development, IT solutions, tech consulting",
+                  color: "bg-purple-100 text-purple-600"
+                },
+                {
+                  icon: Heart,
+                  title: "Health & Wellness",
+                  description: "Fitness planning, nutrition advice, lifestyle changes",
+                  color: "bg-red-100 text-red-600"
+                },
+                {
+                  icon: Gavel,
+                  title: "Legal Advice",
+                  description: "Contract review, legal consultation, compliance help",
+                  color: "bg-orange-100 text-orange-600"
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Finance & Investment",
+                  description: "Financial planning, investment strategies, budgeting",
+                  color: "bg-emerald-100 text-emerald-600"
+                },
+                {
+                  icon: Home,
+                  title: "Home & Lifestyle",
+                  description: "Interior design, home improvement, lifestyle coaching",
+                  color: "bg-indigo-100 text-indigo-600"
+                },
+                {
+                  icon: User,
+                  title: "Personal Development",
+                  description: "Self-improvement, goal setting, productivity coaching",
+                  color: "bg-teal-100 text-teal-600"
+                },
+                {
+                  icon: Lightbulb,
+                  title: "Creative & Innovation",
+                  description: "Creative projects, innovation consulting, artistic guidance",
+                  color: "bg-yellow-100 text-yellow-600"
+                }
+              ].map((category, index) => {
+                const Icon = category.icon;
+                return (
+                  <Card key={index} className="hover:shadow-lg transition-shadow border-0 bg-white/50">
+                    <CardContent className="p-6 text-center">
+                      <div className={`mx-auto flex h-14 w-14 items-center justify-center rounded-lg ${category.color} mb-4`}>
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                        {category.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {category.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+            <div className="text-center mt-12">
+              <p className="text-muted-foreground mb-6">
+                Don't see your problem category? We have experts for almost everything!
+              </p>
+              <Button size="lg" asChild>
+                <a href="#submit-problem">
+                  Submit Any Problem
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Submission Form */}
       <section id="submit-problem" className="py-20 sm:py-32 bg-muted/30">
         <div className="container">
