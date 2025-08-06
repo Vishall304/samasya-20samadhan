@@ -72,7 +72,7 @@ export default function Index() {
 
               <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl border border-purple-200/50 p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
                 {/* Gradient Border Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-3xl opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative">
                   {/* Enhanced Header */}
