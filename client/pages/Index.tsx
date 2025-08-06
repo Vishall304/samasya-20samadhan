@@ -77,9 +77,6 @@ export default function Index() {
                 <div className="relative">
                   {/* Enhanced Header */}
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-4 shadow-lg">
-                      <MessageSquare className="w-6 h-6 text-white" />
-                    </div>
                     <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
                       What's on your mind today?
                     </h3>
