@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
-import { ArrowRight, CheckCircle, MessageSquare, Users, Clock, Star, Brain, Heart, GraduationCap, Globe, Dumbbell, Smile, Coffee } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageSquare, Users, Clock, Star, Brain, Heart, GraduationCap, Globe, Dumbbell, Smile, Coffee, DollarSign } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -215,6 +215,13 @@ export default function Index() {
                 description: "Job stress, exam pressure, career confusion, or burnout",
                 color: "bg-blue-100 text-blue-600",
                 borderColor: "border-blue-200"
+              },
+              {
+                icon: DollarSign,
+                title: "Financial Stress",
+                description: "Money worries, debt issues, budgeting problems, or financial planning",
+                color: "bg-emerald-100 text-emerald-600",
+                borderColor: "border-emerald-200"
               },
               {
                 icon: Globe,
