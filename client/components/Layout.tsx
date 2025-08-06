@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
 
       <div className="relative z-10">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-lg border-b border-purple-200 shadow-lg">
+      <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-lg border-b border-purple-200 shadow-lg">
         <div className="container">
           <div className="flex h-18 items-center justify-between">
             {/* Logo */}
