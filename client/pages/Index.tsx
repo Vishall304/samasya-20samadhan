@@ -64,6 +64,18 @@ export default function Index() {
               has a solution
             </h1>
 
+            {/* Engaging subtitle */}
+            <div className="max-w-4xl mx-auto mb-12 text-center">
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
+                Life throws curveballs, and sometimes you need someone in your corner.
+                Whether it's stress keeping you up at night, relationship drama, work pressure,
+                or just feeling stuck – you don't have to figure it out alone.
+              </p>
+              <p className="text-lg text-purple-200 font-medium">
+                Share what's on your mind. Connect with caring experts. Feel supported again. ✨
+              </p>
+            </div>
+
             {/* Quick Input Prompt - Enhanced Styling */}
             <div className="max-w-3xl mx-auto mb-10 relative">
               {/* Floating Background Elements */}
