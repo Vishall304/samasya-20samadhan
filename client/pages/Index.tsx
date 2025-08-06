@@ -403,13 +403,13 @@ export default function Index() {
       </section>
 
       {/* Testimonials - Casual */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 relative">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Real talk from real people
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-white/80">
               Here's what some folks have said about getting help
             </p>
           </div>
@@ -429,7 +429,7 @@ export default function Index() {
                 author: "Someone who needed support"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-white border border-gray-200">
+              <Card key={index} className="bg-white/10 backdrop-blur-sm border border-white/20">
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -437,11 +437,11 @@ export default function Index() {
                     ))}
                   </div>
                   
-                  <blockquote className="text-gray-700 mb-4 italic">
+                  <blockquote className="text-white mb-4 italic">
                     "{testimonial.content}"
                   </blockquote>
                   
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-white/70">
                     — {testimonial.author}
                   </div>
                 </CardContent>
