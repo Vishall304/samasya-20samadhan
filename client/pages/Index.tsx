@@ -301,13 +301,13 @@ export default function Index() {
       </section>
 
       {/* Problem Submission Form - Casual */}
-      <section id="submit-problem" className="py-20 bg-white">
+      <section id="submit-problem" className="py-20 relative">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               What's going on?
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-white/80">
               Tell us what's happening. We're here to listen and help however we can.
             </p>
           </div>
