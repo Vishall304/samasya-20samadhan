@@ -48,19 +48,19 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="py-16 md:py-24 relative">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center">
             {/* Friendly Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 border border-purple-200 mb-8">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-purple-300 mb-8 shadow-lg">
               <Smile className="w-4 h-4 text-purple-600 mr-2" />
               <span className="text-sm font-medium text-purple-700">Safe, Anonymous & Caring</span>
             </div>
             
             {/* Main Heading - More Casual */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-800">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Hey, we get it.{" "}
-              <span className="text-purple-600">Every problem</span>{" "}
+              <span className="text-purple-300">Every problem</span>{" "}
               has a solution
             </h1>
 
@@ -160,11 +160,11 @@ export default function Index() {
             {/* Simple Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/60 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-purple-600 mb-1">
+                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                  <div className="text-2xl font-bold text-purple-300 mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-white/80">
                     {stat.label}
                   </div>
                 </div>
