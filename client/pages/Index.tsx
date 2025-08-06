@@ -102,27 +102,20 @@ export default function Index() {
 
             {/* Additional Info */}
             <div className="text-center mb-16">
-              <Button 
-                size="lg" 
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full" 
-                asChild
-              >
-                <a href="#submit-problem">
-                  <Coffee className="mr-2 h-5 w-5" />
-                  Let's Talk
-                </a>
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-purple-300 text-purple-600 hover:bg-purple-50 px-8 py-3 rounded-full"
-                asChild
-              >
-                <Link to="/mentor">
-                  Browse Mentors
-                </Link>
-              </Button>
+              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span>100% Anonymous</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Safe & Secure</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span>No Judgment</span>
+                </div>
+              </div>
             </div>
 
             {/* Simple Stats */}
