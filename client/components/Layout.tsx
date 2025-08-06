@@ -14,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
   const navigation = [
     { name: "Home", href: "/", icon: Home },
     { name: "Get Help", href: "/submit", icon: MessageSquare },
-    { name: "Find Mentors", href: "/mentor", icon: Users },
+    { name: "Find Expert", href: "/mentor", icon: Users },
   ];
 
   const isActive = (path: string) => location.pathname === path;
