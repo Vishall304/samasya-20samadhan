@@ -175,13 +175,13 @@ export default function Index() {
       </section>
 
       {/* Problem Categories - Casual */}
-      <section className="py-20 bg-white">
+      <section className="py-20 relative">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               What's on your mind?
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-white/80">
               Whatever it is, we've probably helped someone with something similar
             </p>
           </div>
@@ -226,21 +226,21 @@ export default function Index() {
             ].map((category, index) => {
               const Icon = category.icon;
               return (
-                <Card key={index} className={`hover:shadow-md transition-shadow cursor-pointer border-2 ${category.borderColor} bg-gray-50/50`}>
+                <Card key={index} className="hover:shadow-2xl transition-all duration-300 cursor-pointer border border-white/20 bg-white/10 backdrop-blur-sm hover:bg-white/20">
                   <CardContent className="p-6 text-center">
                     <div className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full ${category.color} mb-4`}>
                       <Icon className="h-7 w-7" />
                     </div>
                     
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                    <h3 className="text-lg font-semibold text-white mb-3">
                       {category.title}
                     </h3>
-                    
-                    <p className="text-gray-600 text-sm leading-relaxed">
+
+                    <p className="text-white/80 text-sm leading-relaxed">
                       {category.description}
                     </p>
                     
-                    <Button variant="ghost" size="sm" className="mt-4 text-purple-600 hover:bg-purple-50">
+                    <Button variant="ghost" size="sm" className="mt-4 text-purple-300 hover:bg-white/20 hover:text-white">
                       Get help with this
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
