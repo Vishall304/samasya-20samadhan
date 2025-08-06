@@ -20,7 +20,17 @@ export default function Layout({ children }: LayoutProps) {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Global Background with gradient */}
+      <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-pink-900"></div>
+      <div className="fixed inset-0 bg-black/20"></div>
+
+      {/* Floating background elements */}
+      <div className="fixed top-20 left-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl animate-float"></div>
+      <div className="fixed bottom-20 right-20 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
+      <div className="fixed top-1/2 left-10 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-float" style={{animationDelay: '4s'}}></div>
+
+      <div className="relative z-10">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-purple-100 shadow-sm">
         <div className="container">
@@ -271,6 +281,7 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
