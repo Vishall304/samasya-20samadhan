@@ -451,43 +451,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Final CTA - Casual */}
-      <section className="py-20 bg-purple-600">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to feel a bit better?
-            </h2>
-            <p className="text-lg text-purple-100 mb-10">
-              Sometimes just talking about stuff helps. We're here when you're ready.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3" 
-                asChild
-              >
-                <a href="#submit-problem">
-                  Let's start talking
-                </a>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-purple-600 px-8 py-3" 
-                asChild
-              >
-                <Link to="/mentor">
-                  Find a mentor
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }
