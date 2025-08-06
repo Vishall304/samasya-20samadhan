@@ -64,37 +64,79 @@ export default function Index() {
               has a solution
             </h1>
 
-            {/* Quick Input Prompt */}
-            <div className="max-w-2xl mx-auto mb-10">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200 p-8 shadow-lg">
-                <p className="text-gray-600 mb-4 text-center">
-                  What's on your mind today?
-                </p>
-                <div className="flex flex-col gap-4">
-                  <textarea
-                    placeholder="Type anything... stress, family issues, work problems, or whatever's bothering you. We're here to listen."
-                    className="w-full h-24 px-4 py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none text-gray-700 placeholder-gray-400"
-                    value={formData.description}
-                    onChange={(e) => handleInputChange("description", e.target.value)}
-                  />
-                  <div className="flex flex-col sm:flex-row gap-3">
+            {/* Quick Input Prompt - Enhanced Styling */}
+            <div className="max-w-3xl mx-auto mb-10 relative">
+              {/* Floating Background Elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"></div>
+
+              <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl border border-purple-200/50 p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                {/* Gradient Border Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="relative">
+                  {/* Enhanced Header */}
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-4 shadow-lg">
+                      <MessageSquare className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                      What's on your mind today?
+                    </h3>
+                    <p className="text-gray-500 text-sm">
+                      Share anything that's bothering you. We're here to listen.
+                    </p>
+                  </div>
+
+                  {/* Enhanced Textarea */}
+                  <div className="relative mb-6">
+                    <textarea
+                      placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support."
+                      className="w-full h-32 px-6 py-4 rounded-2xl border-2 border-purple-100 bg-purple-50/30 focus:border-purple-400 focus:ring-4 focus:ring-purple-100 focus:bg-white/80 outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-base leading-relaxed"
+                      value={formData.description}
+                      onChange={(e) => handleInputChange("description", e.target.value)}
+                    />
+                    {/* Character count or helpful text */}
+                    <div className="absolute bottom-3 right-4 text-xs text-gray-400">
+                      Press Enter for new line
+                    </div>
+                  </div>
+
+                  {/* Enhanced Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <Button
-                      className="flex-1 bg-purple-600 hover:bg-purple-700 text-white rounded-xl py-3"
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-base font-semibold"
                       onClick={() => {
                         // Scroll to full form
                         document.getElementById('submit-problem')?.scrollIntoView({ behavior: 'smooth' });
                       }}
                     >
+                      <Heart className="mr-3 h-5 w-5" />
                       Get Help With This
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-3 h-5 w-5" />
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-xl py-3"
+                      className="border-2 border-purple-300 text-purple-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:border-purple-400 rounded-2xl py-4 px-6 transition-all duration-300 hover:scale-[1.02] text-base font-semibold"
                       asChild
                     >
-                      <Link to="/mentor">Browse Mentors</Link>
+                      <Link to="/mentor">
+                        <Users className="mr-2 h-5 w-5" />
+                        Browse Mentors
+                      </Link>
                     </Button>
+                  </div>
+
+                  {/* Quick Trust Indicators */}
+                  <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-purple-100">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-sm"></div>
+                      <span>Completely Anonymous</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-sm"></div>
+                      <span>Safe & Secure</span>
+                    </div>
                   </div>
                 </div>
               </div>
