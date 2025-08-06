@@ -253,13 +253,13 @@ export default function Index() {
       </section>
 
       {/* How It Works - Simple */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 relative">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               How it works
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-white/80">
               It's pretty simple, actually
             </p>
           </div>
@@ -283,15 +283,15 @@ export default function Index() {
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple-600 text-white mb-6 text-xl font-bold">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white mb-6 text-xl font-bold shadow-lg">
                   {step.step}
                 </div>
-                
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+
+                <h3 className="text-xl font-semibold text-white mb-4">
                   {step.title}
                 </h3>
-                
-                <p className="text-gray-600">
+
+                <p className="text-white/80">
                   {step.description}
                 </p>
               </div>
