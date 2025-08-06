@@ -142,7 +142,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main content */}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pt-18">{children}</main>
 
       {/* Enhanced Footer */}
       <footer className="relative overflow-hidden">
