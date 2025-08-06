@@ -64,13 +64,44 @@ export default function Index() {
               has a solution
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Whether you're dealing with stress, relationships, work stuff, or just feeling stuck - 
-              we're here to help. No judgment, totally anonymous, just real support when you need it.
-            </p>
+            {/* Quick Input Prompt */}
+            <div className="max-w-2xl mx-auto mb-10">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-purple-200 p-8 shadow-lg">
+                <p className="text-gray-600 mb-4 text-center">
+                  What's on your mind today?
+                </p>
+                <div className="flex flex-col gap-4">
+                  <textarea
+                    placeholder="Type anything... stress, family issues, work problems, or whatever's bothering you. We're here to listen."
+                    className="w-full h-24 px-4 py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none resize-none text-gray-700 placeholder-gray-400"
+                    value={formData.description}
+                    onChange={(e) => handleInputChange("description", e.target.value)}
+                  />
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      className="flex-1 bg-purple-600 hover:bg-purple-700 text-white rounded-xl py-3"
+                      onClick={() => {
+                        // Scroll to full form
+                        document.getElementById('submit-problem')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      Get Help With This
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border-purple-300 text-purple-600 hover:bg-purple-50 rounded-xl py-3"
+                      asChild
+                    >
+                      <Link to="/mentor">Browse Mentors</Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            {/* CTA Buttons - More Casual */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            {/* Additional Info */}
+            <div className="text-center mb-16">
               <Button 
                 size="lg" 
                 className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full" 
