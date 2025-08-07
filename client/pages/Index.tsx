@@ -76,75 +76,98 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Quick Input Prompt - Enhanced Styling */}
-            <div className="max-w-3xl mx-auto mb-10 relative">
-              {/* Floating Background Elements */}
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"></div>
+            {/* Quick Input Prompt - Ultra Enhanced Styling */}
+            <div className="max-w-4xl mx-auto mb-10 relative group">
+              {/* Advanced Floating Background Elements */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-400/30 to-cyan-400/30 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 -left-8 w-20 h-20 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
 
-              <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl border border-purple-200/50 p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              {/* Main Card with Advanced Effects */}
+              <div className="relative bg-white/95 backdrop-blur-xl rounded-[2rem] border-2 border-white/50 p-10 md:p-12 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] group-hover:border-purple-300/50">
+                {/* Animated Gradient Border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 via-blue-500/20 to-purple-500/20 rounded-[2rem] opacity-100 animate-gradient-shift"></div>
+
+                {/* Glowing Effect */}
+                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-purple-400/10 to-pink-400/10 blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-3xl opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative">
-                  {/* Enhanced Header */}
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                  {/* Ultra Enhanced Header */}
+                  <div className="text-center mb-8">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Heart className="w-8 h-8 text-white animate-pulse" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4">
                       What's on your mind today?
                     </h3>
-                    <p className="text-gray-500 text-sm">
-                      Share anything that's bothering you. We're here to listen.
+                    <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                      Share anything that's bothering you. We're here to listen with care and understanding.
                     </p>
                   </div>
 
-                  {/* Enhanced Textarea */}
-                  <div className="relative mb-6">
-                    <textarea
-                      placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support."
-                      className="w-full h-32 px-6 py-4 rounded-2xl border-2 border-purple-100 bg-purple-50/30 focus:border-purple-400 focus:ring-4 focus:ring-purple-100 focus:bg-white/80 outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-base leading-relaxed"
-                      value={formData.description}
-                      onChange={(e) => handleInputChange("description", e.target.value)}
-                    />
-                    {/* Character count or helpful text */}
-                    <div className="absolute bottom-3 right-4 text-xs text-gray-400">
-                      Press Enter for new line
+                  {/* Ultra Enhanced Textarea */}
+                  <div className="relative mb-8">
+                    <div className="relative overflow-hidden rounded-3xl border-2 border-purple-200/50 bg-gradient-to-br from-purple-50/50 to-pink-50/50 p-1 shadow-inner">
+                      <textarea
+                        placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
+                        className="w-full h-36 px-8 py-6 rounded-[1.4rem] border-0 bg-white/80 focus:bg-white focus:shadow-lg outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-lg leading-relaxed focus:ring-4 focus:ring-purple-200/50"
+                        value={formData.description}
+                        onChange={(e) => handleInputChange("description", e.target.value)}
+                      />
+                      {/* Enhanced floating label effect */}
+                      <div className="absolute top-4 left-8 text-xs font-medium text-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        💭 Your thoughts are safe here
+                      </div>
+                      <div className="absolute bottom-4 right-6 text-xs text-gray-400 flex items-center gap-2">
+                        <span>Press Enter for new line</span>
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Enhanced Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  {/* Ultra Enhanced Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-5">
                     <Button
-                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-base font-semibold"
+                      className="flex-1 relative overflow-hidden bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 hover:from-purple-700 hover:via-pink-700 hover:to-purple-800 text-white rounded-3xl py-5 px-8 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 text-lg font-bold group"
                       onClick={() => {
-                        // Scroll to full form
                         document.getElementById('submit-problem')?.scrollIntoView({ behavior: 'smooth' });
                       }}
                     >
-                      <Heart className="mr-3 h-5 w-5" />
+                      {/* Button shimmer effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      <Heart className="mr-3 h-6 w-6 animate-pulse" />
                       Get Help With This
-                      <ArrowRight className="ml-3 h-5 w-5" />
+                      <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-2 border-purple-300 text-purple-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:border-purple-400 rounded-2xl py-4 px-6 transition-all duration-300 hover:scale-[1.02] text-base font-semibold"
+                      className="border-3 border-purple-400/50 text-purple-600 hover:text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:border-purple-500 rounded-3xl py-5 px-8 transition-all duration-500 hover:scale-105 text-lg font-bold backdrop-blur-sm bg-white/50 hover:shadow-xl"
                       asChild
                     >
                       <Link to="/mentor">
-                        <Users className="mr-2 h-5 w-5" />
-                        Browse Mentors
+                        <Users className="mr-3 h-6 w-6" />
+                        Browse Experts
                       </Link>
                     </Button>
                   </div>
 
-                  {/* Quick Trust Indicators */}
-                  <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-purple-100">
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-sm"></div>
-                      <span>Completely Anonymous</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-sm"></div>
-                      <span>Safe & Secure</span>
+                  {/* Enhanced Trust Indicators */}
+                  <div className="mt-8 pt-8 border-t border-gradient-to-r from-purple-200 via-pink-200 to-purple-200">
+                    <div className="flex flex-wrap items-center justify-center gap-8">
+                      <div className="flex items-center gap-3 px-4 py-2 bg-green-50 rounded-full border border-green-200">
+                        <div className="w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-md animate-pulse"></div>
+                        <span className="text-sm font-semibold text-green-700">Completely Anonymous</span>
+                      </div>
+                      <div className="flex items-center gap-3 px-4 py-2 bg-blue-50 rounded-full border border-blue-200">
+                        <div className="w-4 h-4 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full shadow-md animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                        <span className="text-sm font-semibold text-blue-700">Safe & Secure</span>
+                      </div>
+                      <div className="flex items-center gap-3 px-4 py-2 bg-purple-50 rounded-full border border-purple-200">
+                        <div className="w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full shadow-md animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <span className="text-sm font-semibold text-purple-700">Expert Support 24/7</span>
+                      </div>
                     </div>
                   </div>
                 </div>
