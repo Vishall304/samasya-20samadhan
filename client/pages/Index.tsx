@@ -1,12 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
-import { ArrowRight, CheckCircle, MessageSquare, Users, Clock, Star, Brain, Heart, GraduationCap, Globe, Dumbbell, Smile, Coffee, DollarSign } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  MessageSquare,
+  Users,
+  Clock,
+  Star,
+  Brain,
+  Heart,
+  GraduationCap,
+  Globe,
+  Dumbbell,
+  Smile,
+  Coffee,
+  DollarSign,
+} from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -16,7 +43,7 @@ export default function Index() {
     category: "",
     description: "",
     urgency: "",
-    contactEmail: ""
+    contactEmail: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,22 +54,22 @@ export default function Index() {
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const categories = [
     "Mental Health",
-    "Physical Wellness", 
+    "Physical Wellness",
     "Relationships",
     "Career & Student Life",
-    "Other Issues"
+    "Other Issues",
   ];
 
   const stats = [
     { number: "500+", label: "Problems Solved" },
     { number: "100+", label: "Happy People" },
     { number: "100%", label: "Safe & Private" },
-    { number: "24h", label: "Quick Response" }
+    { number: "24h", label: "Quick Response" },
   ];
 
   return (
@@ -54,25 +81,29 @@ export default function Index() {
             {/* Friendly Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-purple-300 mb-8 shadow-lg">
               <Smile className="w-4 h-4 text-purple-600 mr-2" />
-              <span className="text-sm font-medium text-purple-700">Safe, Anonymous & Caring</span>
+              <span className="text-sm font-medium text-purple-700">
+                Safe, Anonymous & Caring
+              </span>
             </div>
-            
+
             {/* Main Heading - More Casual */}
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Hey, we get it.{" "}
-              <span className="text-purple-300">Every problem</span>{" "}
-              has a solution
+              <span className="text-purple-300">Every problem</span> has a
+              solution
             </h1>
 
             {/* Engaging subtitle */}
             <div className="max-w-4xl mx-auto mb-12 text-center">
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                Life throws curveballs, and sometimes you need someone in your corner.
-                Whether it's stress keeping you up at night, relationship drama, work pressure,
-                or just feeling stuck – you don't have to figure it out alone.
+                Life throws curveballs, and sometimes you need someone in your
+                corner. Whether it's stress keeping you up at night,
+                relationship drama, work pressure, or just feeling stuck – you
+                don't have to figure it out alone.
               </p>
               <p className="text-lg text-purple-200 font-medium">
-                Share what's on your mind. Connect with caring experts. Feel supported again. ✨
+                Share what's on your mind. Connect with caring experts. Feel
+                supported again. ✨
               </p>
             </div>
 
@@ -103,7 +134,9 @@ export default function Index() {
                       placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
                       className="w-full h-36 px-6 py-5 rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-base leading-relaxed shadow-inner"
                       value={formData.description}
-                      onChange={(e) => handleInputChange("description", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("description", e.target.value)
+                      }
                     />
                     {/* Character count or helpful text */}
                     <div className="absolute bottom-3 right-4 text-xs text-gray-400">
@@ -117,7 +150,9 @@ export default function Index() {
                       className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg font-semibold"
                       onClick={() => {
                         // Scroll to full form
-                        document.getElementById('submit-problem')?.scrollIntoView({ behavior: 'smooth' });
+                        document
+                          .getElementById("submit-problem")
+                          ?.scrollIntoView({ behavior: "smooth" });
                       }}
                     >
                       <Heart className="mr-3 h-5 w-5" />
@@ -172,13 +207,14 @@ export default function Index() {
             {/* Simple Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                <div
+                  key={index}
+                  className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                >
                   <div className="text-2xl font-bold text-purple-300 mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-white/80">
-                    {stat.label}
-                  </div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -194,63 +230,75 @@ export default function Index() {
               What's on your mind?
             </h2>
             <p className="text-lg text-white/80">
-              Whatever it is, we've probably helped someone with something similar
+              Whatever it is, we've probably helped someone with something
+              similar
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
                 icon: Brain,
                 title: "Mental Health",
-                description: "Stress, anxiety, feeling overwhelmed, or just need someone to listen",
+                description:
+                  "Stress, anxiety, feeling overwhelmed, or just need someone to listen",
                 color: "bg-purple-100 text-purple-600",
-                borderColor: "border-purple-200"
+                borderColor: "border-purple-200",
               },
               {
                 icon: Dumbbell,
                 title: "Physical Wellness",
-                description: "Sleep problems, energy issues, body pain, or health concerns",
+                description:
+                  "Sleep problems, energy issues, body pain, or health concerns",
                 color: "bg-green-100 text-green-600",
-                borderColor: "border-green-200"
+                borderColor: "border-green-200",
               },
               {
                 icon: Heart,
                 title: "Relationships",
-                description: "Family drama, breakups, friendship issues, or feeling lonely",
+                description:
+                  "Family drama, breakups, friendship issues, or feeling lonely",
                 color: "bg-red-100 text-red-600",
-                borderColor: "border-red-200"
+                borderColor: "border-red-200",
               },
               {
                 icon: GraduationCap,
                 title: "Work & Study",
-                description: "Job stress, exam pressure, career confusion, or burnout",
+                description:
+                  "Job stress, exam pressure, career confusion, or burnout",
                 color: "bg-blue-100 text-blue-600",
-                borderColor: "border-blue-200"
+                borderColor: "border-blue-200",
               },
               {
                 icon: DollarSign,
                 title: "Financial Stress",
-                description: "Money worries, debt issues, budgeting problems, or financial planning",
+                description:
+                  "Money worries, debt issues, budgeting problems, or financial planning",
                 color: "bg-emerald-100 text-emerald-600",
-                borderColor: "border-emerald-200"
+                borderColor: "border-emerald-200",
               },
               {
                 icon: Globe,
                 title: "Life Stuff",
-                description: "Identity questions, motivation, bad habits, or just figuring things out",
+                description:
+                  "Identity questions, motivation, bad habits, or just figuring things out",
                 color: "bg-orange-100 text-orange-600",
-                borderColor: "border-orange-200"
-              }
+                borderColor: "border-orange-200",
+              },
             ].map((category, index) => {
               const Icon = category.icon;
               return (
-                <Card key={index} className="hover:shadow-2xl transition-all duration-300 cursor-pointer border border-white/20 bg-white/10 backdrop-blur-sm hover:bg-white/20">
+                <Card
+                  key={index}
+                  className="hover:shadow-2xl transition-all duration-300 cursor-pointer border border-white/20 bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                >
                   <CardContent className="p-6 text-center">
-                    <div className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full ${category.color} mb-4`}>
+                    <div
+                      className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full ${category.color} mb-4`}
+                    >
                       <Icon className="h-7 w-7" />
                     </div>
-                    
+
                     <h3 className="text-lg font-semibold text-white mb-3">
                       {category.title}
                     </h3>
@@ -258,8 +306,12 @@ export default function Index() {
                     <p className="text-white/80 text-sm leading-relaxed">
                       {category.description}
                     </p>
-                    
-                    <Button variant="ghost" size="sm" className="mt-4 text-purple-300 hover:bg-white/20 hover:text-white">
+
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="mt-4 text-purple-300 hover:bg-white/20 hover:text-white"
+                    >
                       Get help with this
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -282,24 +334,27 @@ export default function Index() {
               It's pretty simple, actually
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
             {[
               {
                 step: "1",
                 title: "Tell us what's up",
-                description: "Share what's bothering you - as much or as little as you want. It's completely anonymous."
+                description:
+                  "Share what's bothering you - as much or as little as you want. It's completely anonymous.",
               },
               {
-                step: "2", 
+                step: "2",
                 title: "We match you up",
-                description: "Our team finds the right person to help based on what you're going through."
+                description:
+                  "Our team finds the right person to help based on what you're going through.",
               },
               {
                 step: "3",
                 title: "Get the support you need",
-                description: "Chat with someone who gets it, get advice, or just have someone listen."
-              }
+                description:
+                  "Chat with someone who gets it, get advice, or just have someone listen.",
+              },
             ].map((step, index) => (
               <div key={index} className="text-center">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white mb-6 text-xl font-bold shadow-lg">
@@ -310,9 +365,7 @@ export default function Index() {
                   {step.title}
                 </h3>
 
-                <p className="text-white/80">
-                  {step.description}
-                </p>
+                <p className="text-white/80">{step.description}</p>
               </div>
             ))}
           </div>
@@ -327,7 +380,8 @@ export default function Index() {
               What's going on?
             </h2>
             <p className="text-lg text-white/80">
-              Tell us what's happening. We're here to listen and help however we can.
+              Tell us what's happening. We're here to listen and help however we
+              can.
             </p>
           </div>
 
@@ -336,20 +390,31 @@ export default function Index() {
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="title" className="text-base font-medium">What's the main thing bothering you?</Label>
+                    <Label htmlFor="title" className="text-base font-medium">
+                      What's the main thing bothering you?
+                    </Label>
                     <Input
                       id="title"
                       placeholder="e.g., I'm really stressed about work lately..."
                       value={formData.title}
-                      onChange={(e) => handleInputChange("title", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("title", e.target.value)
+                      }
                       required
                       className="h-12 bg-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="category" className="text-base font-medium">What category does this fall under?</Label>
-                    <Select onValueChange={(value) => handleInputChange("category", value)} required>
+                    <Label htmlFor="category" className="text-base font-medium">
+                      What category does this fall under?
+                    </Label>
+                    <Select
+                      onValueChange={(value) =>
+                        handleInputChange("category", value)
+                      }
+                      required
+                    >
                       <SelectTrigger className="h-12 bg-white">
                         <SelectValue placeholder="Pick the closest one" />
                       </SelectTrigger>
@@ -364,50 +429,77 @@ export default function Index() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="description" className="text-base font-medium">Want to tell us more?</Label>
+                    <Label
+                      htmlFor="description"
+                      className="text-base font-medium"
+                    >
+                      Want to tell us more?
+                    </Label>
                     <Textarea
                       id="description"
                       placeholder="Share whatever feels comfortable. What's been happening? How are you feeling? What kind of help would be useful?"
                       rows={5}
                       value={formData.description}
-                      onChange={(e) => handleInputChange("description", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("description", e.target.value)
+                      }
                       required
                       className="bg-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="urgency" className="text-base font-medium">How urgent is this?</Label>
-                    <Select onValueChange={(value) => handleInputChange("urgency", value)} required>
+                    <Label htmlFor="urgency" className="text-base font-medium">
+                      How urgent is this?
+                    </Label>
+                    <Select
+                      onValueChange={(value) =>
+                        handleInputChange("urgency", value)
+                      }
+                      required
+                    >
                       <SelectTrigger className="h-12 bg-white">
                         <SelectValue placeholder="No rush? Or need help soon?" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="low">Not urgent - I can wait</SelectItem>
-                        <SelectItem value="medium">Pretty urgent - within a few days would be great</SelectItem>
-                        <SelectItem value="high">Urgent - really need help soon</SelectItem>
-                        <SelectItem value="critical">Critical - need support right now</SelectItem>
+                        <SelectItem value="low">
+                          Not urgent - I can wait
+                        </SelectItem>
+                        <SelectItem value="medium">
+                          Pretty urgent - within a few days would be great
+                        </SelectItem>
+                        <SelectItem value="high">
+                          Urgent - really need help soon
+                        </SelectItem>
+                        <SelectItem value="critical">
+                          Critical - need support right now
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-base font-medium">Email (optional)</Label>
+                    <Label htmlFor="email" className="text-base font-medium">
+                      Email (optional)
+                    </Label>
                     <Input
                       id="email"
                       type="email"
                       placeholder="Only if you want us to follow up"
                       value={formData.contactEmail}
-                      onChange={(e) => handleInputChange("contactEmail", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("contactEmail", e.target.value)
+                      }
                       className="h-12 bg-white"
                     />
                     <p className="text-sm text-gray-500">
-                      Totally optional - we'll only email if you want us to keep in touch
+                      Totally optional - we'll only email if you want us to keep
+                      in touch
                     </p>
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full h-12 bg-purple-600 hover:bg-purple-700 text-white rounded-lg"
                     size="lg"
                   >
@@ -432,34 +524,43 @@ export default function Index() {
               Here's what some folks have said about getting help
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                content: "Honestly, I finally felt heard. Thank you for creating this space.",
-                author: "College student"
+                content:
+                  "Honestly, I finally felt heard. Thank you for creating this space.",
+                author: "College student",
               },
               {
-                content: "SamasyaSamadhan helped me when I literally had no one else to talk to.",
-                author: "Working professional"
+                content:
+                  "SamasyaSamadhan helped me when I literally had no one else to talk to.",
+                author: "Working professional",
               },
               {
-                content: "It's like having a friend who really listens without judging.",
-                author: "Someone who needed support"
-              }
+                content:
+                  "It's like having a friend who really listens without judging.",
+                author: "Someone who needed support",
+              },
             ].map((testimonial, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm border border-white/20">
+              <Card
+                key={index}
+                className="bg-white/10 backdrop-blur-sm border border-white/20"
+              >
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
-                  
+
                   <blockquote className="text-white mb-4 italic">
                     "{testimonial.content}"
                   </blockquote>
-                  
+
                   <div className="text-sm text-white/70">
                     — {testimonial.author}
                   </div>
@@ -469,7 +570,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
     </Layout>
   );
 }
