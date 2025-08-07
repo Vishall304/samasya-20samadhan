@@ -252,19 +252,8 @@ export default function Layout({ children }: LayoutProps) {
                 </h3>
                 <ul className="space-y-4">
                   <li>
-                    <a
-                      href="https://chat.whatsapp.com/your-community-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group"
-                    >
-                      <div className="w-2 h-2 bg-green-400 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
-                      <span>Connect with us</span>
-                    </a>
-                  </li>
-                  <li>
                     <Link to="/about" className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-cyan-400 transition-colors"></div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
                       <span>About</span>
                     </Link>
                   </li>
