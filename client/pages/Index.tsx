@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
+import ProblemSubmissionModal from "@/components/ProblemSubmissionModal";
 import {
   ArrowRight,
   CheckCircle,
@@ -45,6 +46,13 @@ export default function Index() {
     urgency: "",
     contactEmail: "",
   });
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<{
+    title: string;
+    icon: any;
+    color: string;
+  } | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -149,10 +157,19 @@ export default function Index() {
                     <Button
                       className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg font-semibold"
                       onClick={() => {
-                        // Scroll to full form
-                        document
-                          .getElementById("submit-problem")
-                          ?.scrollIntoView({ behavior: "smooth" });
+                        if (formData.description.trim()) {
+                          setSelectedCategory({
+                            title: "General Support",
+                            icon: Heart,
+                            color: "bg-purple-100 text-purple-600"
+                          });
+                          setModalOpen(true);
+                        } else {
+                          // Scroll to categories if no description
+                          document
+                            .getElementById("problem-categories")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }
                       }}
                     >
                       <Heart className="mr-3 h-5 w-5" />
@@ -223,7 +240,7 @@ export default function Index() {
       </section>
 
       {/* Problem Categories - Casual */}
-      <section className="py-20 relative">
+      <section id="problem-categories" className="py-20 relative">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
@@ -311,6 +328,14 @@ export default function Index() {
                       variant="ghost"
                       size="sm"
                       className="mt-4 text-purple-300 hover:bg-white/20 hover:text-white"
+                      onClick={() => {
+                        setSelectedCategory({
+                          title: category.title,
+                          icon: category.icon,
+                          color: category.color
+                        });
+                        setModalOpen(true);
+                      }}
                     >
                       Get help with this
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -570,6 +595,18 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Problem Submission Modal */}
+      <ProblemSubmissionModal
+        isOpen={modalOpen}
+        onClose={() => {
+          setModalOpen(false);
+          setSelectedCategory(null);
+        }}
+        selectedCategory={selectedCategory?.title}
+        categoryIcon={selectedCategory?.icon}
+        categoryColor={selectedCategory?.color}
+      />
     </Layout>
   );
 }
