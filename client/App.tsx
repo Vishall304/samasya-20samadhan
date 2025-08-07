@@ -42,15 +42,7 @@ const App = () => (
               />
             } 
           />
-          <Route 
-            path="/how-it-works" 
-            element={
-              <Placeholder 
-                title="How It Works" 
-                description="Step-by-step guide on using our expert consultation platform"
-              />
-            } 
-          />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route 
             path="/help" 
             element={
