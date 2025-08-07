@@ -234,18 +234,6 @@ export default function Layout({ children }: LayoutProps) {
                 </h3>
                 <ul className="space-y-4">
                   <li>
-                    <Link to="/contact" className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-cyan-400 transition-colors"></div>
-                      <span>Contact Us</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/emergency" className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group">
-                      <div className="w-2 h-2 bg-red-400 rounded-full group-hover:bg-orange-400 transition-colors"></div>
-                      <span>Emergency Help</span>
-                    </Link>
-                  </li>
-                  <li>
                     <Link to="/about" className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group">
                       <div className="w-2 h-2 bg-green-400 rounded-full group-hover:bg-emerald-400 transition-colors"></div>
                       <span>About</span>
