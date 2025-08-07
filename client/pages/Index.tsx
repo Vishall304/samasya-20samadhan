@@ -82,7 +82,7 @@ export default function Index() {
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"></div>
 
-              <div className="relative bg-white/90 backdrop-blur-lg rounded-3xl border border-purple-200/50 p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="relative bg-white/95 backdrop-blur-lg rounded-3xl border-2 border-purple-200/60 p-8 md:p-10 shadow-2xl transition-all duration-300 hover:shadow-3xl">
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-3xl opacity-100 transition-opacity duration-300"></div>
 
@@ -100,8 +100,8 @@ export default function Index() {
                   {/* Enhanced Textarea */}
                   <div className="relative mb-6">
                     <textarea
-                      placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support."
-                      className="w-full h-32 px-6 py-4 rounded-2xl border-2 border-purple-100 bg-purple-50/30 focus:border-purple-400 focus:ring-4 focus:ring-purple-100 focus:bg-white/80 outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-base leading-relaxed"
+                      placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
+                      className="w-full h-36 px-6 py-5 rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-base leading-relaxed shadow-inner"
                       value={formData.description}
                       onChange={(e) => handleInputChange("description", e.target.value)}
                     />
@@ -114,7 +114,7 @@ export default function Index() {
                   {/* Enhanced Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
-                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-base font-semibold"
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg font-semibold"
                       onClick={() => {
                         // Scroll to full form
                         document.getElementById('submit-problem')?.scrollIntoView({ behavior: 'smooth' });
@@ -126,12 +126,12 @@ export default function Index() {
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-2 border-purple-300 text-purple-600 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:border-purple-400 rounded-2xl py-4 px-6 transition-all duration-300 hover:scale-[1.02] text-base font-semibold"
+                      className="border-2 border-purple-400 text-purple-600 hover:bg-purple-50 hover:border-purple-500 rounded-2xl py-4 px-8 transition-all duration-300 hover:scale-105 text-lg font-semibold bg-white/70"
                       asChild
                     >
                       <Link to="/mentor">
                         <Users className="mr-2 h-5 w-5" />
-                        Browse Mentors
+                        Browse Experts
                       </Link>
                     </Button>
                   </div>
