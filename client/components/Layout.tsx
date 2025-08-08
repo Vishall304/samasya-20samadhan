@@ -216,7 +216,7 @@ export default function Layout({ children }: LayoutProps) {
                   <li>
                     <Link to="/mentor" className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center space-x-2 group">
                       <div className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-pink-400 transition-colors"></div>
-                      <span>Find Mentors</span>
+                      <span>Expert</span>
                     </Link>
                   </li>
                   <li>
