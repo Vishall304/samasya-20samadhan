@@ -25,6 +25,7 @@ interface ProblemSubmissionModalProps {
   selectedCategory?: string;
   categoryIcon?: any;
   categoryColor?: string;
+  onSubmitSuccess?: (formData: any) => void;
 }
 
 export default function ProblemSubmissionModal({
@@ -33,6 +34,7 @@ export default function ProblemSubmissionModal({
   selectedCategory,
   categoryIcon: IconComponent,
   categoryColor,
+  onSubmitSuccess,
 }: ProblemSubmissionModalProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -55,11 +57,21 @@ export default function ProblemSubmissionModal({
     // Handle form submission
     console.log("Problem submitted:", formData);
     setIsSubmitted(true);
-    
-    // Reset after 3 seconds
+
+    // After showing success message, trigger AI analysis
     setTimeout(() => {
       setIsSubmitted(false);
       onClose();
+
+      // Trigger AI analysis with the form data
+      if (onSubmitSuccess) {
+        onSubmitSuccess({
+          ...formData,
+          category: selectedCategory || formData.category
+        });
+      }
+
+      // Reset form
       setFormData({
         name: "",
         age: "",
@@ -74,7 +86,7 @@ export default function ProblemSubmissionModal({
         location: "",
         preferredContactMethod: "",
       });
-    }, 3000);
+    }, 2000);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -105,10 +117,10 @@ export default function ProblemSubmissionModal({
               Thank you for sharing!
             </h3>
             <p className="text-gray-600 mb-4">
-              We've received your message and our experts will review it soon. You'll hear from us within 24 hours.
+              Our AI is now analyzing your problem to provide personalized suggestions and find the perfect expert for you.
             </p>
             <div className="text-sm text-gray-500">
-              You're not alone in this journey. ✨
+              Preparing your personalized analysis... ✨
             </div>
           </div>
         </DialogContent>
