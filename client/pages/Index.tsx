@@ -90,7 +90,7 @@ export default function Index() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-purple-300 mb-8 shadow-lg">
               <Smile className="w-4 h-4 text-purple-600 mr-2" />
               <span className="text-sm font-medium text-purple-700">
-                Soul to Soul Counselling
+                Safe, Anonymous & Caring
               </span>
             </div>
 
