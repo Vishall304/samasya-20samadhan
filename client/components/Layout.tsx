@@ -33,15 +33,15 @@ export default function Layout({ children }: LayoutProps) {
       <div className="relative z-10">
       {/* Header */}
       <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-lg border-b border-purple-200 shadow-lg">
-        <div className="container">
-          <div className="flex h-18 items-center justify-between">
+        <div className="container px-4 sm:px-6">
+          <div className="flex h-16 sm:h-18 items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 group">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
                   <Heart className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-2xl font-bold">
+                <div className="text-xl sm:text-2xl font-bold">
                   <span className="text-purple-600">Samasya</span>
                   <span className="text-pink-500">Samadhan</span>
                 </div>
@@ -72,10 +72,10 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center space-x-3">
-              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-full px-5" asChild>
+              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-full px-4 sm:px-5" asChild>
                 <Link to="/login">Sign In</Link>
               </Button>
-              <Button size="sm" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-6 py-2.5 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105" asChild>
+              <Button size="sm" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full px-4 sm:px-6 py-2.5 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105" asChild>
                 <Link to="/signup">
                   <Sparkles className="w-4 h-4 mr-2" />
                   Get Started
@@ -142,7 +142,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 pt-18">{children}</main>
+      <main className="flex-1 pt-16 sm:pt-18">{children}</main>
 
       {/* Enhanced Footer */}
       <footer className="relative overflow-hidden">
@@ -155,43 +155,43 @@ export default function Layout({ children }: LayoutProps) {
         <div className="absolute bottom-10 right-10 w-24 h-24 bg-pink-500/10 rounded-full blur-xl"></div>
 
         <div className="relative">
-          <div className="container py-16">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
+          <div className="container py-12 sm:py-16 px-4 sm:px-6">
+            <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-4">
               {/* Enhanced Brand Section */}
               <div className="lg:col-span-2 space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center shadow-lg">
-                    <Heart className="w-6 h-6 text-white" />
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Heart className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                   </div>
-                  <div className="text-2xl font-bold">
+                  <div className="text-xl sm:text-2xl font-bold">
                     <span className="text-purple-300">Samasya</span>
                     <span className="text-pink-300">Samadhan</span>
                   </div>
                 </div>
 
-                <p className="text-gray-300 max-w-lg leading-relaxed text-lg">
+                <p className="text-gray-300 max-w-lg leading-relaxed text-base sm:text-lg">
                   Hey, we get it. Every problem has a solution. Get help safely and confidentially - no judgment, just real support when you need it.
                 </p>
 
                 {/* Trust badges */}
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    <span className="text-white text-sm font-medium">100% Anonymous</span>
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <div className="flex items-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-3">
+                    <div className="w-2 sm:w-3 h-2 sm:h-3 bg-green-400 rounded-full"></div>
+                    <span className="text-white text-xs sm:text-sm font-medium">100% Anonymous</span>
                   </div>
-                  <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
-                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                    <span className="text-white text-sm font-medium">Safe & Secure</span>
+                  <div className="flex items-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-3">
+                    <div className="w-2 sm:w-3 h-2 sm:h-3 bg-blue-400 rounded-full"></div>
+                    <span className="text-white text-xs sm:text-sm font-medium">Safe & Secure</span>
                   </div>
-                  <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3">
-                    <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
-                    <span className="text-white text-sm font-medium">No Judgment</span>
+                  <div className="flex items-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-3">
+                    <div className="w-2 sm:w-3 h-2 sm:h-3 bg-purple-400 rounded-full"></div>
+                    <span className="text-white text-xs sm:text-sm font-medium">No Judgment</span>
                   </div>
                 </div>
 
                 {/* Quick CTA */}
                 <div className="pt-4">
-                  <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                  <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl px-4 sm:px-6 py-2.5 sm:py-3 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base min-h-[44px]" asChild>
                     <Link to="/submit">
                       <MessageSquare className="w-4 h-4 mr-2" />
                       Get Help Now
