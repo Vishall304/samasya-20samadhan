@@ -96,7 +96,7 @@ export default function ProblemSubmissionModal({
   if (isSubmitted) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md mx-4">
           <div className="text-center py-8">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-100 mb-4">
               <Check className="h-8 w-8 text-green-600" />
@@ -118,7 +118,7 @@ export default function ProblemSubmissionModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto mx-4">
         <DialogHeader>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -128,8 +128,8 @@ export default function ProblemSubmissionModal({
                 </div>
               )}
               <div>
-                <DialogTitle className="text-xl">Share Your {selectedCategory} Concern</DialogTitle>
-                <DialogDescription>
+                <DialogTitle className="text-lg sm:text-xl">Share Your {selectedCategory} Concern</DialogTitle>
+                <DialogDescription className="text-sm sm:text-base">
                   Help us understand what you're going through so we can connect you with the right expert.
                 </DialogDescription>
               </div>
@@ -137,17 +137,17 @@ export default function ProblemSubmissionModal({
           </div>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-6">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 mt-4 sm:mt-6">
           {/* Personal Information */}
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
-            <h4 className="font-semibold text-purple-900 mb-4 flex items-center gap-2">
+          <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+            <h4 className="font-semibold text-purple-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
               <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
               Personal Information
             </h4>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium">
+                <Label htmlFor="name" className="text-xs sm:text-sm font-medium">
                   Full Name *
                 </Label>
                 <Input
@@ -156,12 +156,12 @@ export default function ProblemSubmissionModal({
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
                   required
-                  className="h-11"
+                  className="h-10 sm:h-11 text-sm sm:text-base"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="age" className="text-sm font-medium">
+                <Label htmlFor="age" className="text-xs sm:text-sm font-medium">
                   Age *
                 </Label>
                 <Input
@@ -173,7 +173,7 @@ export default function ProblemSubmissionModal({
                   value={formData.age}
                   onChange={(e) => handleInputChange("age", e.target.value)}
                   required
-                  className="h-11"
+                  className="h-10 sm:h-11 text-sm sm:text-base"
                 />
               </div>
             </div>
@@ -389,18 +389,18 @@ export default function ProblemSubmissionModal({
           </div>
 
           {/* Submit Button */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
-              className="flex-1"
+              className="flex-1 min-h-[44px] text-sm sm:text-base"
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+              className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 min-h-[44px] text-sm sm:text-base"
             >
               <Send className="mr-2 h-4 w-4" />
               Submit & Get Help
