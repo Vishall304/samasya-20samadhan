@@ -19,6 +19,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 import ProblemSubmissionModal from "@/components/ProblemSubmissionModal";
+import AIAnalysisResult from "@/components/AIAnalysisResult";
 import {
   ArrowRight,
   CheckCircle,
@@ -48,6 +49,8 @@ export default function Index() {
   });
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [aiAnalysisOpen, setAiAnalysisOpen] = useState(false);
+  const [submittedData, setSubmittedData] = useState<any>(null);
   const [selectedCategory, setSelectedCategory] = useState<{
     title: string;
     icon: any;
@@ -606,6 +609,28 @@ export default function Index() {
         selectedCategory={selectedCategory?.title}
         categoryIcon={selectedCategory?.icon}
         categoryColor={selectedCategory?.color}
+        onSubmitSuccess={(data) => {
+          setSubmittedData(data);
+          setAiAnalysisOpen(true);
+        }}
+      />
+
+      {/* AI Analysis Result */}
+      <AIAnalysisResult
+        isOpen={aiAnalysisOpen}
+        onClose={() => {
+          setAiAnalysisOpen(false);
+          setSubmittedData(null);
+        }}
+        problemText={submittedData?.description || ""}
+        category={submittedData?.category || ""}
+        onConnectExpert={(expertId) => {
+          console.log("Connecting with expert:", expertId);
+          // Handle expert connection
+          setAiAnalysisOpen(false);
+          setSubmittedData(null);
+          // You can redirect to expert chat or show success message
+        }}
       />
     </Layout>
   );
