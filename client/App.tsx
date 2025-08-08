@@ -44,14 +44,15 @@ const App = () => (
             } 
           />
           <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route 
-            path="/help" 
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/help"
             element={
-              <Placeholder 
-                title="Help Center" 
+              <Placeholder
+                title="Help Center"
                 description="Frequently asked questions and support resources"
               />
-            } 
+            }
           />
           <Route 
             path="/contact" 
