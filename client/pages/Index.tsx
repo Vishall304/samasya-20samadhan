@@ -95,21 +95,21 @@ export default function Index() {
             </div>
 
             {/* Main Heading - More Casual */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
               Hey, we get it.{" "}
               <span className="text-purple-300">Every problem</span> has a
               solution
             </h1>
 
             {/* Engaging subtitle */}
-            <div className="max-w-4xl mx-auto mb-12 text-center">
-              <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
+            <div className="max-w-4xl mx-auto mb-12 text-center px-4">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
                 Life throws curveballs, and sometimes you need someone in your
                 corner. Whether it's stress keeping you up at night,
                 relationship drama, work pressure, or just feeling stuck – you
                 don't have to figure it out alone.
               </p>
-              <p className="text-lg text-purple-200 font-medium">
+              <p className="text-base sm:text-lg text-purple-200 font-medium">
                 Share what's on your mind. Connect with caring experts. Feel
                 supported again. ✨
               </p>
@@ -121,14 +121,14 @@ export default function Index() {
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"></div>
 
-              <div className="relative bg-white/95 backdrop-blur-lg rounded-3xl border-2 border-purple-200/60 p-8 md:p-10 shadow-2xl transition-all duration-300 hover:shadow-3xl">
+              <div className="relative bg-white/95 backdrop-blur-lg rounded-2xl sm:rounded-3xl border-2 border-purple-200/60 p-6 sm:p-8 md:p-10 shadow-2xl transition-all duration-300 hover:shadow-3xl mx-4 sm:mx-0">
                 {/* Gradient Border Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-3xl opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-2xl sm:rounded-3xl opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative">
                   {/* Enhanced Header */}
                   <div className="text-center mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">
                       What's on your mind today?
                     </h3>
                     <p className="text-gray-500 text-sm">
@@ -140,22 +140,22 @@ export default function Index() {
                   <div className="relative mb-6">
                     <textarea
                       placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
-                      className="w-full h-36 px-6 py-5 rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-base leading-relaxed shadow-inner"
+                      className="w-full h-32 sm:h-36 px-4 sm:px-6 py-4 sm:py-5 rounded-xl sm:rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed shadow-inner"
                       value={formData.description}
                       onChange={(e) =>
                         handleInputChange("description", e.target.value)
                       }
                     />
                     {/* Character count or helpful text */}
-                    <div className="absolute bottom-3 right-4 text-xs text-gray-400">
+                    <div className="absolute bottom-3 right-4 text-xs text-gray-400 hidden sm:block">
                       Press Enter for new line
                     </div>
                   </div>
 
                   {/* Enhanced Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <Button
-                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-2xl py-4 px-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg font-semibold"
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl sm:rounded-2xl py-3 sm:py-4 px-6 sm:px-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg font-semibold min-h-[48px]"
                       onClick={() => {
                         if (formData.description.trim()) {
                           setSelectedCategory({
@@ -178,7 +178,7 @@ export default function Index() {
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-2 border-purple-400 text-purple-600 hover:bg-purple-50 hover:border-purple-500 rounded-2xl py-4 px-8 transition-all duration-300 hover:scale-105 text-lg font-semibold bg-white/70"
+                      className="border-2 border-purple-400 text-purple-600 hover:bg-purple-50 hover:border-purple-500 rounded-xl sm:rounded-2xl py-3 sm:py-4 px-6 sm:px-8 transition-all duration-300 hover:scale-105 text-base sm:text-lg font-semibold bg-white/70 min-h-[48px]"
                       asChild
                     >
                       <Link to="/mentor">
@@ -222,16 +222,16 @@ export default function Index() {
             </div>
 
             {/* Simple Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                  className="text-center bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white/20"
                 >
-                  <div className="text-2xl font-bold text-purple-300 mb-1">
+                  <div className="text-xl sm:text-2xl font-bold text-purple-300 mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-white/80">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-white/80">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -252,7 +252,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto px-4">
             {[
               {
                 icon: Brain,
