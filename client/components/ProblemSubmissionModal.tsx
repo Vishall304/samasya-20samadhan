@@ -36,13 +36,18 @@ export default function ProblemSubmissionModal({
 }: ProblemSubmissionModalProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    phoneNumber: "",
     title: "",
     category: selectedCategory || "",
     description: "",
+    duration: "",
+    previousTreatment: "",
     urgency: "",
     contactEmail: "",
-    age: "",
     location: "",
+    preferredContactMethod: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -56,13 +61,18 @@ export default function ProblemSubmissionModal({
       setIsSubmitted(false);
       onClose();
       setFormData({
+        name: "",
+        age: "",
+        phoneNumber: "",
         title: "",
         category: selectedCategory || "",
         description: "",
+        duration: "",
+        previousTreatment: "",
         urgency: "",
         contactEmail: "",
-        age: "",
         location: "",
+        preferredContactMethod: "",
       });
     }, 3000);
   };
@@ -128,38 +138,164 @@ export default function ProblemSubmissionModal({
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-          {/* Quick Summary */}
-          <div className="space-y-2">
-            <Label htmlFor="title" className="text-sm font-medium">
-              What's the main thing that's bothering you? *
-            </Label>
-            <Input
-              id="title"
-              placeholder={`e.g., I'm really struggling with ${selectedCategory?.toLowerCase()} lately...`}
-              value={formData.title}
-              onChange={(e) => handleInputChange("title", e.target.value)}
-              required
-              className="h-11"
-            />
+          {/* Personal Information */}
+          <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+            <h4 className="font-semibold text-purple-900 mb-4 flex items-center gap-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              Personal Information
+            </h4>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-sm font-medium">
+                  Full Name *
+                </Label>
+                <Input
+                  id="name"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                  required
+                  className="h-11"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="age" className="text-sm font-medium">
+                  Age *
+                </Label>
+                <Input
+                  id="age"
+                  type="number"
+                  min="13"
+                  max="100"
+                  placeholder="Your age"
+                  value={formData.age}
+                  onChange={(e) => handleInputChange("age", e.target.value)}
+                  required
+                  className="h-11"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div className="space-y-2">
+                <Label htmlFor="phoneNumber" className="text-sm font-medium">
+                  Phone Number *
+                </Label>
+                <Input
+                  id="phoneNumber"
+                  type="tel"
+                  placeholder="+91 XXXXX XXXXX"
+                  value={formData.phoneNumber}
+                  onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
+                  required
+                  className="h-11"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="location" className="text-sm font-medium">
+                  City/Location *
+                </Label>
+                <Input
+                  id="location"
+                  placeholder="City, State"
+                  value={formData.location}
+                  onChange={(e) => handleInputChange("location", e.target.value)}
+                  required
+                  className="h-11"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Detailed Description */}
-          <div className="space-y-2">
-            <Label htmlFor="description" className="text-sm font-medium">
-              Tell us more about what's happening *
-            </Label>
-            <Textarea
-              id="description"
-              placeholder={getPlaceholderByCategory(selectedCategory || "")}
-              rows={4}
-              value={formData.description}
-              onChange={(e) => handleInputChange("description", e.target.value)}
-              required
-              className="resize-none"
-            />
-            <p className="text-xs text-gray-500">
-              Share as much or as little as you're comfortable with. This helps us match you with the right expert.
-            </p>
+          {/* Problem Details */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <h4 className="font-semibold text-blue-900 mb-4 flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              Problem Details
+            </h4>
+
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="title" className="text-sm font-medium">
+                  What's the main issue you're facing? *
+                </Label>
+                <Input
+                  id="title"
+                  placeholder={`e.g., I'm really struggling with ${selectedCategory?.toLowerCase()} lately...`}
+                  value={formData.title}
+                  onChange={(e) => handleInputChange("title", e.target.value)}
+                  required
+                  className="h-11"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="description" className="text-sm font-medium">
+                  Detailed Description *
+                </Label>
+                <Textarea
+                  id="description"
+                  placeholder={getPlaceholderByCategory(selectedCategory || "")}
+                  rows={4}
+                  value={formData.description}
+                  onChange={(e) => handleInputChange("description", e.target.value)}
+                  required
+                  className="resize-none"
+                />
+                <p className="text-xs text-gray-500">
+                  Please describe your problem in detail. Include symptoms, situations, or specific challenges you're facing.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="duration" className="text-sm font-medium">
+                  How long have you been experiencing this problem? *
+                </Label>
+                <Select
+                  onValueChange={(value) => handleInputChange("duration", value)}
+                  required
+                >
+                  <SelectTrigger className="h-11">
+                    <SelectValue placeholder="Select duration" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="few-days">A few days</SelectItem>
+                    <SelectItem value="1-2-weeks">1-2 weeks</SelectItem>
+                    <SelectItem value="1-month">About a month</SelectItem>
+                    <SelectItem value="2-3-months">2-3 months</SelectItem>
+                    <SelectItem value="6-months">6 months</SelectItem>
+                    <SelectItem value="1-year">About a year</SelectItem>
+                    <SelectItem value="more-than-year">More than a year</SelectItem>
+                    <SelectItem value="several-years">Several years</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="previousTreatment" className="text-sm font-medium">
+                  Have you sought help for this before?
+                </Label>
+                <Select
+                  onValueChange={(value) => handleInputChange("previousTreatment", value)}
+                >
+                  <SelectTrigger className="h-11">
+                    <SelectValue placeholder="Select an option" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="no">No, this is my first time seeking help</SelectItem>
+                    <SelectItem value="counselor">Yes, I've seen a counselor/therapist</SelectItem>
+                    <SelectItem value="doctor">Yes, I've consulted a doctor</SelectItem>
+                    <SelectItem value="family">Yes, I've talked to family/friends</SelectItem>
+                    <SelectItem value="online">Yes, I've tried online resources</SelectItem>
+                    <SelectItem value="medication">Yes, I'm currently on medication</SelectItem>
+                    <SelectItem value="other">Yes, other form of help</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
           </div>
 
           {/* Urgency Level */}
@@ -191,68 +327,62 @@ export default function ProblemSubmissionModal({
             </Select>
           </div>
 
-          {/* Optional Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="age" className="text-sm font-medium">
-                Age range (optional)
-              </Label>
-              <Select onValueChange={(value) => handleInputChange("age", value)}>
-                <SelectTrigger className="h-11">
-                  <SelectValue placeholder="Select age range" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="teen">13-17 years</SelectItem>
-                  <SelectItem value="young-adult">18-25 years</SelectItem>
-                  <SelectItem value="adult">26-35 years</SelectItem>
-                  <SelectItem value="middle-age">36-50 years</SelectItem>
-                  <SelectItem value="senior">50+ years</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+          {/* Contact & Communication Preferences */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+            <h4 className="font-semibold text-green-900 mb-4 flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              Contact & Communication Preferences
+            </h4>
 
-            <div className="space-y-2">
-              <Label htmlFor="location" className="text-sm font-medium">
-                Location (optional)
-              </Label>
-              <Input
-                id="location"
-                placeholder="City, State/Country"
-                value={formData.location}
-                onChange={(e) => handleInputChange("location", e.target.value)}
-                className="h-11"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="preferredContactMethod" className="text-sm font-medium">
+                  Preferred Contact Method *
+                </Label>
+                <Select
+                  onValueChange={(value) => handleInputChange("preferredContactMethod", value)}
+                  required
+                >
+                  <SelectTrigger className="h-11">
+                    <SelectValue placeholder="How would you like us to contact you?" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="phone">📞 Phone Call</SelectItem>
+                    <SelectItem value="whatsapp">💬 WhatsApp</SelectItem>
+                    <SelectItem value="email">📧 Email</SelectItem>
+                    <SelectItem value="video">📹 Video Call</SelectItem>
+                    <SelectItem value="text">💬 Text Messages</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm font-medium">
+                  Email Address
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  value={formData.contactEmail}
+                  onChange={(e) => handleInputChange("contactEmail", e.target.value)}
+                  className="h-11"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Contact Email */}
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-sm font-medium">
-              Email (optional)
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="your.email@example.com"
-              value={formData.contactEmail}
-              onChange={(e) => handleInputChange("contactEmail", e.target.value)}
-              className="h-11"
-            />
-            <p className="text-xs text-gray-500">
-              Only provide if you want us to follow up via email. We respect your privacy completely.
-            </p>
-          </div>
 
           {/* Privacy Notice */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center mt-0.5">
+              <div className="flex-shrink-0 w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center mt-0.5">
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
               <div className="text-sm">
-                <p className="font-medium text-blue-900 mb-1">Your privacy matters</p>
-                <p className="text-blue-700">
-                  All submissions are completely anonymous and secure. We never share your personal information, and you can choose to remain completely anonymous throughout the process.
+                <p className="font-medium text-amber-900 mb-1">Privacy & Confidentiality</p>
+                <p className="text-amber-700">
+                  All information provided is strictly confidential and will only be used to match you with the right expert. Your personal details are secure and protected. We follow professional confidentiality standards.
                 </p>
               </div>
             </div>
