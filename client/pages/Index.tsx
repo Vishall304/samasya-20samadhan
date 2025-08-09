@@ -609,6 +609,7 @@ export default function Index() {
         selectedCategory={selectedCategory?.title}
         categoryIcon={selectedCategory?.icon}
         categoryColor={selectedCategory?.color}
+        problemDescription={formData.description}
         onSubmitSuccess={(data) => {
           setSubmittedData(data);
           setAiAnalysisOpen(true);
