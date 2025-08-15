@@ -20,8 +20,8 @@ import {
 export default function Experts() {
   const experts = [
     {
-      id: "vyaktesh-sontakke",
-      name: "व्यकतेश सोनटक्के",
+      id: "venkatesh-sontakke",
+      name: "Venkatesh Sontakke",
       specialty: "Senior Psychologist & Life Coach",
       experience: "15 years experience",
       rating: 5.0,
@@ -36,7 +36,7 @@ export default function Experts() {
     },
     {
       id: "dr-priya-sharma",
-      name: "Dr. प्रिया शर��मा",
+      name: "Dr. प्रिया शर्मा",
       specialty: "Clinical Psychologist",
       experience: "8 years experience",
       rating: 4.9,
