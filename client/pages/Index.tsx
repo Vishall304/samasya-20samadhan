@@ -35,6 +35,8 @@ import {
   Smile,
   Coffee,
   DollarSign,
+  Mic,
+  MicOff,
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -51,6 +53,7 @@ export default function Index() {
   const [modalOpen, setModalOpen] = useState(false);
   const [aiAnalysisOpen, setAiAnalysisOpen] = useState(false);
   const [submittedData, setSubmittedData] = useState<any>(null);
+  const [isListening, setIsListening] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<{
     title: string;
     icon: any;
@@ -66,6 +69,45 @@ export default function Index() {
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const startListening = () => {
+    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+      const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
+      const recognition = new SpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'hi-IN'; // Hindi language
+
+      recognition.onstart = () => {
+        setIsListening(true);
+      };
+
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        setFormData((prev) => ({
+          ...prev,
+          description: prev.description + (prev.description ? ' ' : '') + transcript
+        }));
+      };
+
+      recognition.onerror = (event: any) => {
+        console.error('Speech recognition error:', event.error);
+        setIsListening(false);
+        if (event.error === 'not-allowed') {
+          alert('माइक्रोफोन की अनुमति दें (Please allow microphone access)');
+        }
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      recognition.start();
+    } else {
+      alert('आपका browser speech recognition को support नहीं करता (Your browser does not support speech recognition)');
+    }
   };
 
   const categories = [
@@ -141,15 +183,33 @@ export default function Index() {
                   <div className="relative mb-6">
                     <textarea
                       placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
-                      className="w-full h-32 sm:h-36 px-4 sm:px-6 py-4 sm:py-5 rounded-xl sm:rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed shadow-inner"
+                      className="w-full h-32 sm:h-36 px-4 sm:px-6 py-4 sm:py-5 pr-12 sm:pr-16 rounded-xl sm:rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed shadow-inner"
                       value={formData.description}
                       onChange={(e) =>
                         handleInputChange("description", e.target.value)
                       }
                     />
+                    {/* Microphone Button */}
+                    <button
+                      type="button"
+                      onClick={startListening}
+                      disabled={isListening}
+                      className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isListening
+                          ? 'bg-red-500 text-white animate-pulse'
+                          : 'bg-purple-500 hover:bg-purple-600 text-white'
+                      }`}
+                      title={isListening ? 'सुन रहा है... (Listening...)' : 'बोलकर बताएं (Click to speak)'}
+                    >
+                      {isListening ? (
+                        <MicOff className="w-4 h-4" />
+                      ) : (
+                        <Mic className="w-4 h-4" />
+                      )}
+                    </button>
                     {/* Character count or helpful text */}
                     <div className="absolute bottom-3 right-4 text-xs text-gray-400 hidden sm:block">
-                      Press Enter for new line
+                      {isListening ? 'सुन रहा है... (Listening...)' : 'Press Enter for new line'}
                     </div>
                   </div>
 
