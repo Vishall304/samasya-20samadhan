@@ -20,8 +20,23 @@ import {
 export default function Experts() {
   const experts = [
     {
+      id: "vyaktesh-sontakke",
+      name: "व्यकतेश सोनटक्के",
+      specialty: "Senior Psychologist & Life Coach",
+      experience: "15 years experience",
+      rating: 5.0,
+      reviewCount: 456,
+      responseTime: "1 hour",
+      languages: ["Hindi", "English", "Marathi"],
+      location: "Pune, Maharashtra",
+      price: "₹1200 / session",
+      availability: "Available today",
+      bio: "Expert psychologist specializing in mental health, relationships, career guidance, and life transformation. Helping people find clarity and purpose.",
+      categories: ["Mental Health", "Relationships", "Work & Study", "Life Stuff"],
+    },
+    {
       id: "dr-priya-sharma",
-      name: "Dr. प्रिया शर्मा",
+      name: "Dr. प्रिया शर��मा",
       specialty: "Clinical Psychologist",
       experience: "8 years experience",
       rating: 4.9,
