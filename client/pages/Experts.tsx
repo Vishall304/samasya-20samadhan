@@ -36,7 +36,7 @@ export default function Experts() {
     },
     {
       id: "dr-priya-sharma",
-      name: "Dr. प्रिया शर्मा",
+      name: "Dr. Priya Sharma",
       specialty: "Clinical Psychologist",
       experience: "8 years experience",
       rating: 4.9,
@@ -51,7 +51,7 @@ export default function Experts() {
     },
     {
       id: "rajesh-singh",
-      name: "राजेश सिंह",
+      name: "Rajesh Singh",
       specialty: "Career Counselor",
       experience: "12 years experience",
       rating: 4.8,
@@ -66,7 +66,7 @@ export default function Experts() {
     },
     {
       id: "dr-kavita-patel",
-      name: "Dr. कविता पटेल",
+      name: "Dr. Kavita Patel",
       specialty: "Relationship Counselor",
       experience: "10 years experience",
       rating: 4.9,
