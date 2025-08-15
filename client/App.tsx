@@ -10,6 +10,8 @@ import Index from "./pages/Index";
 import Experts from "./pages/Experts";
 import HowItWorks from "./pages/HowItWorks";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Placeholder from "./pages/Placeholder";
 import NotFound from "./pages/NotFound";
 
@@ -23,16 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route
-            path="/mentor"
-            element={
-              <Placeholder
-                title="Talk to a Mentor"
-                description="Connect with caring mentors who understand your struggles"
-                suggestedAction={{ text: "Submit Problem First", href: "/#submit-problem" }}
-              />
-            }
-          />
+          <Route path="/mentor" element={<Experts />} />
           <Route 
             path="/submit" 
             element={
@@ -90,24 +83,8 @@ const App = () => (
               />
             } 
           />
-          <Route 
-            path="/login" 
-            element={
-              <Placeholder 
-                title="Sign In" 
-                description="Access your account and manage your consultations"
-              />
-            } 
-          />
-          <Route 
-            path="/signup" 
-            element={
-              <Placeholder 
-                title="Create Account" 
-                description="Join our community of users and experts"
-              />
-            } 
-          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
