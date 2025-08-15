@@ -149,9 +149,8 @@ export default function Index() {
             {/* Engaging subtitle */}
             <div className="max-w-4xl mx-auto mb-12 text-center px-4">
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                Sometimes life feels overwhelming, and you need someone who truly understands what you're going through.
-                Whether it's work stress, relationship issues, anxiety, or just feeling stuck -
-                you don't have to face it alone.
+                Don't worry, we are here for you. Whatever challenge you're facing,
+                you don't have to go through it alone.
               </p>
               <p className="text-base sm:text-lg text-purple-200 font-medium">
                 Share what's on your mind. Connect with caring experts. Feel supported again. ✨
