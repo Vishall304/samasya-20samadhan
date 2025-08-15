@@ -19,7 +19,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 import ProblemSubmissionModal from "@/components/ProblemSubmissionModal";
-import AIAnalysisResult from "@/components/AIAnalysisResult";
+import AIResponseChat from "@/components/AIResponseChat";
 import {
   ArrowRight,
   CheckCircle,
@@ -616,8 +616,8 @@ export default function Index() {
         }}
       />
 
-      {/* AI Analysis Result */}
-      <AIAnalysisResult
+      {/* AI Chat Response */}
+      <AIResponseChat
         isOpen={aiAnalysisOpen}
         onClose={() => {
           setAiAnalysisOpen(false);
@@ -625,6 +625,7 @@ export default function Index() {
         }}
         problemText={submittedData?.description || ""}
         category={submittedData?.category || ""}
+        userInfo={submittedData || {}}
         onConnectExpert={(expertId) => {
           console.log("Connecting with expert:", expertId);
           // Handle expert connection
