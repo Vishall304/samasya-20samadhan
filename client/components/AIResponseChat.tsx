@@ -110,7 +110,7 @@ ${user.duration === 'several-years' || user.duration === 'more-than-year'
 - गुस्से में कुछ ना कहें
 
 **2. समझदारी से व्यवहार:**
-- दूसरे की परिस्थिति समझने की कोशिश करें
+- दूसरे की परिस्थिति समझने की को��िश करें
 - छोटी-छोटी खुशी के moments celebrate करें
 - रोज एक appreciation message भेजें
 
@@ -136,7 +136,7 @@ ${user.duration === 'several-years'
 
 आपकी **काम और पढ़ाई** की समस्या समझ आ गई है। यह productivity औ��� stress management का मामला है।
 
-## 🔍 **समस्या का विश्लेषण:**
+## 🔍 **समस्या का ��िश्लेषण:**
 - काम का बोझ (Work Overload)
 - Time management की कमी
 - Focus और concentration की समस्या
@@ -170,7 +170,7 @@ ${user.age < 25
 
 ---
 
-**Career और Study experts** खोज रहा हूं आपके लिए...`,
+**Career और Study experts** खोज रह��� हूं आपके लिए...`,
 
       "Financial Stress": `नमस्ते ${user.name}! 🙏
 
@@ -231,7 +231,7 @@ ${user.duration === 'several-years'
 
 **2. Energy बढ़ाने के लिए:**
 - रोज 30 ��िनट walk करें
-- हर घंटे में 5 मिनट stretch करें
+- हर घंटे में 5 मिनट stretch कर���ं
 - भरपूर पानी पिएं (8-10 गिलास)
 
 **3. Diet में सुधार:**
@@ -360,34 +360,34 @@ ${user.age < 25
         },
         {
           id: "career-coach",
-          name: "अरुण कुमार",
+          name: "Arun Kumar",
           specialty: "Career Development Coach",
           rating: 4.8,
-          responseTime: "5 घंटे में जवाब",
-          languages: ["हिंदी", "English"],
-          availability: "आज उपलब्ध"
+          responseTime: "Usually responds in 5 hours",
+          languages: ["Hindi", "English"],
+          availability: "Available today"
         }
       ],
       "Financial Stress": [
         {
           id: "financial-advisor",
-          name: "सुनीता अग्रवाल",
+          name: "Sunita Agarwal",
           specialty: "Financial Planning Expert",
           rating: 4.7,
-          responseTime: "6 घंटे में जवाब",
-          languages: ["हिंदी", "English"],
-          availability: "कल उपलब्ध"
+          responseTime: "Usually responds in 6 hours",
+          languages: ["Hindi", "English"],
+          availability: "Available tomorrow"
         }
       ],
       "Physical Wellness": [
         {
           id: "health-expert",
-          name: "Dr. राहुल वर्मा",
-          specialty: "Wellness & Lifestyle Coach", 
+          name: "Dr. Rahul Verma",
+          specialty: "Wellness & Lifestyle Coach",
           rating: 4.8,
-          responseTime: "4 घंटे में जवाब",
-          languages: ["हिंदी", "English"],
-          availability: "आज उपलब्ध"
+          responseTime: "Usually responds in 4 hours",
+          languages: ["Hindi", "English"],
+          availability: "Available today"
         }
       ],
       "Life Stuff": [
