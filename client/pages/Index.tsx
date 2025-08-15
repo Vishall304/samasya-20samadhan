@@ -107,14 +107,12 @@ export default function Index() {
             {/* Engaging subtitle */}
             <div className="max-w-4xl mx-auto mb-12 text-center px-4">
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                Life throws curveballs, and sometimes you need someone in your
-                corner. Whether it's stress keeping you up at night,
-                relationship drama, work pressure, or just feeling stuck – you
-                don't have to figure it out alone.
+                कभी-कभी जिंदगी में ऐसे पल आते हैं जब लगता है सब कुछ अटक गया है।
+                चाहे वो काम का तनाव हो, रिश्तों की परेशानी हो, या बस मन भारी लग रहा हो -
+                आपको अकेले नहीं सहना पड़ेगा।
               </p>
               <p className="text-base sm:text-lg text-purple-200 font-medium">
-                Share what's on your mind. Connect with caring experts. Feel
-                supported again. ✨
+                बस अपनी बात कहें। हमारे experts से जुड़ें। फिर से खुश महसूस करें। ✨
               </p>
             </div>
 
