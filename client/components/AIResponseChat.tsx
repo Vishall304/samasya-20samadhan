@@ -59,7 +59,7 @@ export default function AIResponseChat({
 ## 🔍 **आपकी समस्या का विश्लेषण:**
 आपके लक्षणों को देखते हुए, लगता है कि आपको:
 - काम का तनाव (Work Stress)
-- ��ींद की कमी (Sleep Issues) 
+- नींद की कमी (Sleep Issues) 
 - मानसिक दबाव (Mental Pressure)
 - अकेलापन का एहसास हो रहा है
 
@@ -90,7 +90,7 @@ ${user.duration === 'several-years' || user.duration === 'more-than-year'
 
 ---
 
-मैं आपके लिए **${user.location}** के सबसे अच्छे experts खोज रहा हूं जो आपकी मदद कर सकते हैं...`,
+मैं आपके लिए **${user.location}** के सबसे अच्छे experts खोज रहा हूं जो आपकी म���द कर सकते हैं...`,
 
       "Relationships": `नमस्ते ${user.name}! 🙏
 
@@ -114,7 +114,7 @@ ${user.duration === 'several-years' || user.duration === 'more-than-year'
 - छोटी-छोटी खुशी के moments celebrate करें
 - रोज एक appreciation message भेजें
 
-**3. रिश्ते मजबूत बनाने के लिए:**
+**3. रिश्ते मजबू�� बनाने के लिए:**
 - Quality time साथ बिताएं
 - एक-दूसरे के लिए कुछ special करें
 - Past की बातों को बार-बार ना उठाएं
@@ -174,7 +174,7 @@ ${user.age < 25
 
       "Financial Stress": `नमस्ते ${user.name}! 🙏
 
-आपकी **पैसों की चिंता** बिल्कुल समझ आ गई है। Financial stress आजकल हर किसी की है।
+आपकी **पैसों की चिंता** बिल्कुल समझ आ ��ई है। Financial stress आजकल हर किसी की है।
 
 ## 🔍 **समस्या का विश्लेषण:**
 - पैसों की तंगी
@@ -206,7 +206,7 @@ ${user.age < 25
 
 ${user.duration === 'several-years' 
   ? '\n⚠️ **लंबे समय की problem है, financial advisor से मिलना जरूरी है।**' 
-  : '\n✅ **समय रहते control कर लेंगे, planning करनी होगी।**'}
+  : '\n✅ **समय ���हते control कर लेंगे, planning करनी होगी।**'}
 
 ---
 
@@ -225,7 +225,7 @@ ${user.duration === 'several-years'
 ## 💡 **तुरंत अपनाने वाले उपाय:**
 
 **1. Sleep Pattern ठीक करें:**
-- र��त 10:30 तक सो जाएं
+- रात 10:30 तक सो जाएं
 - सुबह same time उठें
 - सोने से 1 घंटा पहले screen बंद करें
 
@@ -237,7 +237,7 @@ ${user.duration === 'several-years'
 **3. Diet में सुधार:**
 - समय पर खाना खाएं
 - जंक फूड कम करें
-- Fruits और vegetables ज्यादा लें
+- Fruits औ�� vegetables ज्यादा लें
 
 ## 🎯 **Long-term health के लिए:**
 - Regular checkup करवाएं
@@ -267,12 +267,12 @@ Life direction और purpose की confusion होना बिल्कु�
 **1. अपने Values पहचानें:**
 - क्या चीजें आपको खुशी देती हैं?
 - आपके लिए सबसे जरूरी क्या है?
-- आप किस तरह का व्यक्ति बनना चाहते हैं?
+- आप किस तरह का व्यक्ति ब���ना चाहते हैं?
 
 **2. Small steps लें:**
 - हर हफ्ते कुछ नया try करें
 - अपने interests explore करें  
-- Different activities में participate करें
+- Different activities म���ं participate करें
 
 **3. Clarity पाने के लिए:**
 - रोज journaling करें
@@ -301,13 +301,13 @@ ${user.age < 25
     const expertsMap: { [key: string]: Expert[] } = {
       "Mental Health": [
         {
-          id: "vyaktesh-sontakke",
-          name: "व्यकतेश सोनटक्के",
+          id: "venkatesh-sontakke",
+          name: "Venkatesh Sontakke",
           specialty: "Senior Psychologist & Life Coach",
           rating: 5.0,
-          responseTime: "1 घंटे में जवाब",
-          languages: ["हिंदी", "English", "मराठी"],
-          availability: "आज उपलब्ध"
+          responseTime: "Usually responds in 1 hour",
+          languages: ["Hindi", "English", "Marathi"],
+          availability: "Available today"
         },
         {
           id: "dr-sharma",
@@ -330,13 +330,13 @@ ${user.age < 25
       ],
       "Relationships": [
         {
-          id: "vyaktesh-sontakke",
-          name: "व्यकतेश सोनटक्के",
+          id: "venkatesh-sontakke",
+          name: "Venkatesh Sontakke",
           specialty: "Relationship & Life Expert",
           rating: 5.0,
-          responseTime: "1 घंटे में जवाब",
-          languages: ["हिंदी", "English", "मराठी"],
-          availability: "आज उपलब्ध"
+          responseTime: "Usually responds in 1 hour",
+          languages: ["Hindi", "English", "Marathi"],
+          availability: "Available today"
         },
         {
           id: "dr-patel",
@@ -350,17 +350,17 @@ ${user.age < 25
       ],
       "Work & Study": [
         {
-          id: "vyaktesh-sontakke",
-          name: "व्यकतेश सोनटक्के",
+          id: "venkatesh-sontakke",
+          name: "Venkatesh Sontakke",
           specialty: "Career & Study Guidance Expert",
           rating: 5.0,
-          responseTime: "1 घंटे में जवाब",
-          languages: ["हिंदी", "English", "मराठी"],
-          availability: "आज उपलब्ध"
+          responseTime: "Usually responds in 1 hour",
+          languages: ["Hindi", "English", "Marathi"],
+          availability: "Available today"
         },
         {
           id: "career-coach",
-          name: "अरुण कुम���र",
+          name: "अरुण कुमार",
           specialty: "Career Development Coach",
           rating: 4.8,
           responseTime: "5 घंटे में जवाब",
@@ -392,13 +392,13 @@ ${user.age < 25
       ],
       "Life Stuff": [
         {
-          id: "vyaktesh-sontakke",
-          name: "व्यकतेश सोनटक्के",
+          id: "venkatesh-sontakke",
+          name: "Venkatesh Sontakke",
           specialty: "Life Transformation Expert",
           rating: 5.0,
-          responseTime: "1 घंटे में जवाब",
-          languages: ["हिंदी", "English", "मराठी"],
-          availability: "आज उपलब्ध"
+          responseTime: "Usually responds in 1 hour",
+          languages: ["Hindi", "English", "Marathi"],
+          availability: "Available today"
         },
         {
           id: "life-coach",
@@ -450,7 +450,7 @@ ${user.age < 25
             </div>
             <div>
               <h3 className="text-lg font-semibold">SamasyaSamadhan AI</h3>
-              <p className="text-sm text-gray-500">आपकी समस्या का समाधान</p>
+              <p className="text-sm text-gray-500">आपकी समस्य�� का समाधान</p>
             </div>
           </div>
           <Button variant="ghost" size="sm" onClick={onClose}>
