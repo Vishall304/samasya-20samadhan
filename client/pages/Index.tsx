@@ -158,19 +158,19 @@ export default function Index() {
             </div>
 
             {/* Quick Input Prompt - Enhanced Styling */}
-            <div className="max-w-2xl mx-auto mb-8 relative">
+            <div className="max-w-3xl mx-auto mb-10 relative">
               {/* Floating Background Elements */}
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"></div>
 
-              <div className="relative bg-white/95 backdrop-blur-lg rounded-2xl border-2 border-purple-200/60 p-4 sm:p-6 shadow-2xl transition-all duration-300 hover:shadow-3xl mx-4 sm:mx-0">
+              <div className="relative bg-white/95 backdrop-blur-lg rounded-2xl sm:rounded-3xl border-2 border-purple-200/60 p-6 sm:p-8 md:p-10 shadow-2xl transition-all duration-300 hover:shadow-3xl mx-4 sm:mx-0">
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-2xl sm:rounded-3xl opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative">
                   {/* Enhanced Header */}
-                  <div className="text-center mb-4">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                  <div className="text-center mb-6">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">
                       What's on your mind today?
                     </h3>
                     <p className="text-gray-500 text-sm">
@@ -179,10 +179,10 @@ export default function Index() {
                   </div>
 
                   {/* Enhanced Textarea */}
-                  <div className="relative mb-4">
+                  <div className="relative mb-6">
                     <textarea
                       placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
-                      className="w-full h-24 sm:h-28 px-4 py-3 pr-12 rounded-xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm leading-relaxed shadow-inner"
+                      className="w-full h-32 sm:h-36 px-4 sm:px-6 py-4 sm:py-5 pr-12 sm:pr-16 rounded-xl sm:rounded-2xl border-2 border-purple-200 bg-purple-50/40 focus:border-purple-500 focus:ring-4 focus:ring-purple-200/50 focus:bg-white outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed shadow-inner"
                       value={formData.description}
                       onChange={(e) =>
                         handleInputChange("description", e.target.value)
@@ -215,7 +215,7 @@ export default function Index() {
                   {/* Enhanced Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <Button
-                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl py-3 px-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-sm sm:text-base font-semibold min-h-[44px]"
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl sm:rounded-2xl py-3 sm:py-4 px-6 sm:px-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg font-semibold min-h-[48px]"
                       onClick={() => {
                         if (formData.description.trim()) {
                           setSelectedCategory({
@@ -238,7 +238,7 @@ export default function Index() {
                     </Button>
                     <Button
                       variant="outline"
-                      className="border-2 border-purple-400 text-purple-600 hover:bg-purple-50 hover:border-purple-500 rounded-xl py-3 px-6 transition-all duration-300 hover:scale-105 text-sm sm:text-base font-semibold bg-white/70 min-h-[44px]"
+                      className="border-2 border-purple-400 text-purple-600 hover:bg-purple-50 hover:border-purple-500 rounded-xl sm:rounded-2xl py-3 sm:py-4 px-6 sm:px-8 transition-all duration-300 hover:scale-105 text-base sm:text-lg font-semibold bg-white/70 min-h-[48px]"
                       asChild
                     >
                       <Link to="/mentor">
@@ -249,7 +249,7 @@ export default function Index() {
                   </div>
 
                   {/* Quick Trust Indicators */}
-                  <div className="flex items-center justify-center gap-6 mt-4 pt-4 border-t border-purple-100">
+                  <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-purple-100">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
                       <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-sm"></div>
                       <span>Completely Anonymous</span>
