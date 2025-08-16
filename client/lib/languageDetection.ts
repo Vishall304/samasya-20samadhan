@@ -19,9 +19,19 @@ export function detectLanguage(text: string): LanguageDetectionResult {
   
   if (hasDevanagari) {
     const devanagariChars = (text.match(/[\u0900-\u097F]/g) || []).length;
+    const latinChars = (text.match(/[a-zA-Z]/g) || []).length;
     const totalChars = text.replace(/\s/g, '').length;
     const devanagariRatio = devanagariChars / totalChars;
-    
+
+    // If there's significant mixing of scripts, it's Hinglish
+    if (latinChars > 3 && devanagariRatio < 0.7) {
+      return {
+        language: 'hinglish',
+        script: 'latin',
+        confidence: 0.8
+      };
+    }
+
     return {
       language: 'hindi',
       script: 'devanagari',
