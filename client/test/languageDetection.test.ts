@@ -1,4 +1,5 @@
 // Test file for language detection functionality
+import { describe, it, expect } from 'vitest';
 import { detectLanguage, formatResponseByLanguage } from '../lib/languageDetection';
 
 // Test cases for different language inputs
