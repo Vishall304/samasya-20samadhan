@@ -108,6 +108,30 @@ export function testResponseFormatting() {
   });
 }
 
+// Actual Vitest tests
+describe('Language Detection', () => {
+  testCases.forEach((testCase, index) => {
+    it(`should detect ${testCase.expected} for: ${testCase.description}`, () => {
+      const result = detectLanguage(testCase.input);
+      expect(result.language).toBe(testCase.expected);
+    });
+  });
+});
+
+describe('Response Formatting', () => {
+  it('should format responses correctly based on detected language', () => {
+    const sampleResponses = {
+      hindi: "यह हिंदी में उत्तर है।",
+      hinglish: "Yeh hinglish mein jawab hai.",
+      english: "This is an English response."
+    };
+
+    const englishResult = detectLanguage("Hello world");
+    const formattedResponse = formatResponseByLanguage(englishResult, sampleResponses);
+    expect(formattedResponse).toBe(sampleResponses.english);
+  });
+});
+
 // Export test functions for use in console
 if (typeof window !== 'undefined') {
   (window as any).testLanguageDetection = runLanguageDetectionTests;
