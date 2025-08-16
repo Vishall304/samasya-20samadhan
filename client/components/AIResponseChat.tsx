@@ -14,7 +14,10 @@ import {
   X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import { detectLanguage, formatResponseByLanguage } from "@/lib/languageDetection";
+import {
+  detectLanguage,
+  formatResponseByLanguage,
+} from "@/lib/languageDetection";
 import { getAIResponses } from "@/lib/aiResponses";
 
 interface AIResponseChatProps {
@@ -52,12 +55,12 @@ export default function AIResponseChat({
   const generateAIResponse = (problem: string, cat: string, user: any) => {
     // Detect language from user's problem description
     const detectedLang = detectLanguage(problem);
-    console.log('Detected language:', detectedLang);
-    
+    console.log("Detected language:", detectedLang);
+
     // Get multi-language responses
     const responses = getAIResponses(user);
     const categoryResponses = responses[cat] || responses["Mental Health"];
-    
+
     // Format response based on detected language
     return formatResponseByLanguage(detectedLang, categoryResponses);
   };
@@ -73,7 +76,7 @@ export default function AIResponseChat({
           rating: 5.0,
           responseTime: "Usually responds in 1 hour",
           languages: ["Hindi", "English", "Marathi"],
-          availability: "Available today"
+          availability: "Available today",
         },
         {
           id: "dr-sharma",
@@ -82,7 +85,7 @@ export default function AIResponseChat({
           rating: 4.9,
           responseTime: "Usually responds in 2 hours",
           languages: ["Hindi", "English"],
-          availability: "Available today"
+          availability: "Available today",
         },
         {
           id: "counselor-singh",
@@ -91,10 +94,10 @@ export default function AIResponseChat({
           rating: 4.8,
           responseTime: "Usually responds in 4 hours",
           languages: ["Hindi", "English", "Punjabi"],
-          availability: "Available tomorrow"
-        }
+          availability: "Available tomorrow",
+        },
       ],
-      "Relationships": [
+      Relationships: [
         {
           id: "venkatesh-sontakke",
           name: "Venkatesh Sontakke",
@@ -102,7 +105,7 @@ export default function AIResponseChat({
           rating: 5.0,
           responseTime: "Usually responds in 1 hour",
           languages: ["Hindi", "English", "Marathi"],
-          availability: "Available today"
+          availability: "Available today",
         },
         {
           id: "dr-patel",
@@ -111,8 +114,8 @@ export default function AIResponseChat({
           rating: 4.9,
           responseTime: "Usually responds in 3 hours",
           languages: ["Hindi", "English", "Gujarati"],
-          availability: "Available today"
-        }
+          availability: "Available today",
+        },
       ],
       "Work & Study": [
         {
@@ -122,7 +125,7 @@ export default function AIResponseChat({
           rating: 5.0,
           responseTime: "Usually responds in 1 hour",
           languages: ["Hindi", "English", "Marathi"],
-          availability: "Available today"
+          availability: "Available today",
         },
         {
           id: "career-coach",
@@ -131,8 +134,8 @@ export default function AIResponseChat({
           rating: 4.8,
           responseTime: "Usually responds in 5 hours",
           languages: ["Hindi", "English"],
-          availability: "Available today"
-        }
+          availability: "Available today",
+        },
       ],
       "Financial Stress": [
         {
@@ -142,8 +145,8 @@ export default function AIResponseChat({
           rating: 4.7,
           responseTime: "Usually responds in 6 hours",
           languages: ["Hindi", "English"],
-          availability: "Available tomorrow"
-        }
+          availability: "Available tomorrow",
+        },
       ],
       "Physical Wellness": [
         {
@@ -153,8 +156,8 @@ export default function AIResponseChat({
           rating: 4.8,
           responseTime: "Usually responds in 4 hours",
           languages: ["Hindi", "English"],
-          availability: "Available today"
-        }
+          availability: "Available today",
+        },
       ],
       "Life Stuff": [
         {
@@ -164,7 +167,7 @@ export default function AIResponseChat({
           rating: 5.0,
           responseTime: "Usually responds in 1 hour",
           languages: ["Hindi", "English", "Marathi"],
-          availability: "Available today"
+          availability: "Available today",
         },
         {
           id: "life-coach",
@@ -173,11 +176,11 @@ export default function AIResponseChat({
           rating: 4.9,
           responseTime: "Usually responds in 3 hours",
           languages: ["Hindi", "English"],
-          availability: "Available today"
-        }
-      ]
+          availability: "Available today",
+        },
+      ],
     };
-    
+
     return expertsMap[category] || expertsMap["Mental Health"];
   };
 
@@ -236,9 +239,7 @@ export default function AIResponseChat({
                 <p className="text-sm font-medium text-purple-700 mb-2">
                   {userInfo.name} ({category})
                 </p>
-                <p className="text-gray-700 leading-relaxed">
-                  {problemText}
-                </p>
+                <p className="text-gray-700 leading-relaxed">{problemText}</p>
               </div>
             </div>
           </div>
@@ -253,8 +254,14 @@ export default function AIResponseChat({
                 {isTyping && (
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    <div
+                      className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"
+                      style={{ animationDelay: "0.1s" }}
+                    ></div>
+                    <div
+                      className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"
+                      style={{ animationDelay: "0.2s" }}
+                    ></div>
                     <span className="text-xs text-gray-500">AI typing...</span>
                   </div>
                 )}
@@ -291,23 +298,34 @@ export default function AIResponseChat({
               </h4>
               <div className="space-y-4">
                 {experts.map((expert, index) => (
-                  <Card key={expert.id} className={`hover:shadow-lg transition-all ${index === 0 ? 'ring-2 ring-purple-200 bg-purple-50' : ''}`}>
+                  <Card
+                    key={expert.id}
+                    className={`hover:shadow-lg transition-all ${index === 0 ? "ring-2 ring-purple-200 bg-purple-50" : ""}`}
+                  >
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between">
                         <div className="flex-1">
                           <div className="flex items-center gap-3 mb-2">
-                            <h5 className="font-semibold text-gray-900">{expert.name}</h5>
+                            <h5 className="font-semibold text-gray-900">
+                              {expert.name}
+                            </h5>
                             {index === 0 && (
-                              <Badge className="bg-purple-100 text-purple-700">Best Match</Badge>
+                              <Badge className="bg-purple-100 text-purple-700">
+                                Best Match
+                              </Badge>
                             )}
                             <div className="flex items-center gap-1">
                               <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                              <span className="text-sm font-medium">{expert.rating}</span>
+                              <span className="text-sm font-medium">
+                                {expert.rating}
+                              </span>
                             </div>
                           </div>
-                          
-                          <p className="text-purple-700 font-medium text-sm mb-2">{expert.specialty}</p>
-                          
+
+                          <p className="text-purple-700 font-medium text-sm mb-2">
+                            {expert.specialty}
+                          </p>
+
                           <div className="flex items-center gap-4 text-xs text-gray-600">
                             <div className="flex items-center gap-1">
                               <Clock className="w-3 h-3" />
@@ -322,13 +340,13 @@ export default function AIResponseChat({
                             </Badge>
                           </div>
                         </div>
-                        
+
                         <div className="flex gap-2">
                           <Button variant="outline" size="sm">
                             <MessageSquare className="w-4 h-4 mr-1" />
                             Chat
                           </Button>
-                          <Button 
+                          <Button
                             onClick={() => onConnectExpert(expert.id)}
                             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                             size="sm"
@@ -350,14 +368,19 @@ export default function AIResponseChat({
           <div className="p-4 border-t border-gray-200 bg-gray-50">
             <div className="flex items-center justify-between">
               <p className="text-xs text-gray-500">
-                💡 क्या यह response helpful था? आपका feedback हमारे लिए जरूरी है।
+                💡 क्या यह response helpful था? आपका feedback हमारे लिए जरूरी
+                है।
               </p>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={() => {
-                  setIsTyping(true);
-                  setDisplayedText("");
-                  setShowExperts(false);
-                }}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setIsTyping(true);
+                    setDisplayedText("");
+                    setShowExperts(false);
+                  }}
+                >
                   <RefreshCw className="w-4 h-4 mr-1" />
                   Re-generate
                 </Button>

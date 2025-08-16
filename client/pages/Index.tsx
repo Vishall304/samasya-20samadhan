@@ -72,13 +72,15 @@ export default function Index() {
   };
 
   const startListening = () => {
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-      const SpeechRecognition = (window as any).webkitSpeechRecognition || (window as any).SpeechRecognition;
+    if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+      const SpeechRecognition =
+        (window as any).webkitSpeechRecognition ||
+        (window as any).SpeechRecognition;
       const recognition = new SpeechRecognition();
 
       recognition.continuous = false;
       recognition.interimResults = false;
-      recognition.lang = 'hi-IN'; // Hindi language
+      recognition.lang = "hi-IN"; // Hindi language
 
       recognition.onstart = () => {
         setIsListening(true);
@@ -88,15 +90,16 @@ export default function Index() {
         const transcript = event.results[0][0].transcript;
         setFormData((prev) => ({
           ...prev,
-          description: prev.description + (prev.description ? ' ' : '') + transcript
+          description:
+            prev.description + (prev.description ? " " : "") + transcript,
         }));
       };
 
       recognition.onerror = (event: any) => {
-        console.error('Speech recognition error:', event.error);
+        console.error("Speech recognition error:", event.error);
         setIsListening(false);
-        if (event.error === 'not-allowed') {
-          alert('माइक्रोफोन की अनुमति दें (Please allow microphone access)');
+        if (event.error === "not-allowed") {
+          alert("माइक्रोफोन की अनुमति दें (Please allow microphone access)");
         }
       };
 
@@ -106,7 +109,9 @@ export default function Index() {
 
       recognition.start();
     } else {
-      alert('आपका browser speech recognition को support नहीं करता (Your browser does not support speech recognition)');
+      alert(
+        "आपका browser speech recognition को support नहीं करता (Your browser does not support speech recognition)",
+      );
     }
   };
 
@@ -149,11 +154,12 @@ export default function Index() {
             {/* Engaging subtitle */}
             <div className="max-w-4xl mx-auto mb-12 text-center px-4">
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
-                Don't worry, we are here for you. Whatever challenge you're facing,
-                you don't have to go through it alone.
+                Don't worry, we are here for you. Whatever challenge you're
+                facing, you don't have to go through it alone.
               </p>
               <p className="text-base sm:text-lg text-purple-200 font-medium">
-                Share what's on your mind. Connect with caring experts. Feel supported again. ✨
+                Share what's on your mind. Connect with caring experts. Feel
+                supported again. ✨
               </p>
             </div>
 
@@ -195,10 +201,14 @@ export default function Index() {
                       disabled={isListening}
                       className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                         isListening
-                          ? 'bg-red-500 text-white animate-pulse'
-                          : 'bg-purple-500 hover:bg-purple-600 text-white'
+                          ? "bg-red-500 text-white animate-pulse"
+                          : "bg-purple-500 hover:bg-purple-600 text-white"
                       }`}
-                      title={isListening ? 'सुन रहा है... (Listening...)' : 'बोलकर बताएं (Click to speak)'}
+                      title={
+                        isListening
+                          ? "सुन रहा है... (Listening...)"
+                          : "बोलकर बताएं (Click to speak)"
+                      }
                     >
                       {isListening ? (
                         <MicOff className="w-4 h-4" />
@@ -208,7 +218,9 @@ export default function Index() {
                     </button>
                     {/* Character count or helpful text */}
                     <div className="absolute bottom-3 right-4 text-xs text-gray-400 hidden sm:block">
-                      {isListening ? 'सुन रहा है... (Listening...)' : 'Press Enter for new line'}
+                      {isListening
+                        ? "सुन रहा है... (Listening...)"
+                        : "Press Enter for new line"}
                     </div>
                   </div>
 
@@ -221,7 +233,7 @@ export default function Index() {
                           setSelectedCategory({
                             title: "General Support",
                             icon: Heart,
-                            color: "bg-purple-100 text-purple-600"
+                            color: "bg-purple-100 text-purple-600",
                           });
                           setModalOpen(true);
                         } else {
@@ -291,7 +303,9 @@ export default function Index() {
                   <div className="text-xl sm:text-2xl font-bold text-purple-300 mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-xs sm:text-sm text-white/80">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-white/80">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -392,7 +406,7 @@ export default function Index() {
                         setSelectedCategory({
                           title: category.title,
                           icon: category.icon,
-                          color: category.color
+                          color: category.color,
                         });
                         setModalOpen(true);
                       }}
@@ -456,7 +470,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
 
       {/* Testimonials - Casual */}
       <section className="py-20 relative">
