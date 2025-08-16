@@ -89,13 +89,13 @@ export default function ProblemSubmissionModal({
               <Check className="h-8 w-8 text-green-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              धन्यवाद! (Thank you!)
+              Thank you!
             </h3>
             <p className="text-gray-600 mb-4">
-              हमारा AI आपकी समस्या का विश्लेषण कर रहा है और सबसे अच्छे सुझाव तैयार कर रहा है...
+              Our AI is analyzing your problem and preparing the best suggestions for you...
             </p>
             <div className="text-sm text-gray-500">
-              आपके लिए perfect expert भी खोज रहे हैं ✨
+              We're also finding the perfect expert for you ✨
             </div>
           </div>
         </DialogContent>
@@ -115,10 +115,10 @@ export default function ProblemSubmissionModal({
             )}
             <div>
               <DialogTitle className="text-lg sm:text-xl">
-                {selectedCategory} की समस्या क��� लिए मदद
+                Help for {selectedCategory} Problems
               </DialogTitle>
               <DialogDescription className="text-sm sm:text-base">
-                बस कुछ बेसिक जानकारी दें, बाकी हमारा AI संभाल लेगा
+                Just provide some basic information, our AI will handle the rest
               </DialogDescription>
             </div>
           </div>
@@ -127,10 +127,10 @@ export default function ProblemSubmissionModal({
         {/* Show problem preview */}
         <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <p className="text-sm text-blue-800">
-            <strong>आपकी समस्या:</strong> "{selectedCategory}" 
+            <strong>Your Problem:</strong> "{selectedCategory}"
             <br />
             <span className="text-blue-600">
-              {problemDescription ? problemDescription.substring(0, 150) + '...' : 'आपने जो लिखा था'}
+              {problemDescription ? problemDescription.substring(0, 150) + '...' : 'What you wrote'}
             </span>
           </p>
         </div>
@@ -140,18 +140,18 @@ export default function ProblemSubmissionModal({
           <div className="bg-purple-50 border border-purple-200 rounded-lg p-5">
             <h4 className="font-semibold text-purple-900 mb-4 flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              आपकी जानकारी (Your Information)
+              Your Information
             </h4>
             
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium">
-                    नाम (Name) *
+                    Name *
                   </Label>
                   <Input
                     id="name"
-                    placeholder="अपना पूरा नाम लिखें"
+                    placeholder="Enter your full name"
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     required
@@ -161,14 +161,14 @@ export default function ProblemSubmissionModal({
                 
                 <div className="space-y-2">
                   <Label htmlFor="age" className="text-sm font-medium">
-                    उम्र (Age) *
+                    Age *
                   </Label>
                   <Input
                     id="age"
                     type="number"
                     min="13"
                     max="100"
-                    placeholder="आपकी उम्र"
+                    placeholder="Your age"
                     value={formData.age}
                     onChange={(e) => handleInputChange("age", e.target.value)}
                     required
@@ -180,7 +180,7 @@ export default function ProblemSubmissionModal({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="phoneNumber" className="text-sm font-medium">
-                    मोबाइल नंबर (Mobile Number) *
+                    Mobile Number *
                   </Label>
                   <Input
                     id="phoneNumber"
@@ -195,11 +195,11 @@ export default function ProblemSubmissionModal({
                 
                 <div className="space-y-2">
                   <Label htmlFor="location" className="text-sm font-medium">
-                    कहाँ से हैं (Location) *
+                    Location *
                   </Label>
                   <Input
                     id="location"
-                    placeholder="शहर, राज्य"
+                    placeholder="City, State"
                     value={formData.location}
                     onChange={(e) => handleInputChange("location", e.target.value)}
                     required
@@ -210,24 +210,24 @@ export default function ProblemSubmissionModal({
               
               <div className="space-y-2">
                 <Label htmlFor="duration" className="text-sm font-medium">
-                  यह समस्या कब से हो रही है? (How long have you been facing this?) *
+                  How long have you been facing this problem? *
                 </Label>
                 <Select
                   onValueChange={(value) => handleInputChange("duration", value)}
                   required
                 >
                   <SelectTrigger className="h-11">
-                    <SelectValue placeholder="समय चुनें" />
+                    <SelectValue placeholder="Select duration" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="few-days">कुछ दिन (A few days)</SelectItem>
-                    <SelectItem value="1-2-weeks">1-2 हफ्ते (1-2 weeks)</SelectItem>
-                    <SelectItem value="1-month">लगभग 1 महीना (About a month)</SelectItem>
-                    <SelectItem value="2-3-months">2-3 महीने (2-3 months)</SelectItem>
-                    <SelectItem value="6-months">6 महीने (6 months)</SelectItem>
-                    <SelectItem value="1-year">लगभग 1 साल (About a year)</SelectItem>
-                    <SelectItem value="more-than-year">1 साल से ज्यादा (More than a year)</SelectItem>
-                    <SelectItem value="several-years">कई साल (Several years)</SelectItem>
+                    <SelectItem value="few-days">A few days</SelectItem>
+                    <SelectItem value="1-2-weeks">1-2 weeks</SelectItem>
+                    <SelectItem value="1-month">About a month</SelectItem>
+                    <SelectItem value="2-3-months">2-3 months</SelectItem>
+                    <SelectItem value="6-months">6 months</SelectItem>
+                    <SelectItem value="1-year">About a year</SelectItem>
+                    <SelectItem value="more-than-year">More than a year</SelectItem>
+                    <SelectItem value="several-years">Several years</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -241,9 +241,9 @@ export default function ProblemSubmissionModal({
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
               <div className="text-sm">
-                <p className="font-medium text-green-900 mb-1">🔒 गोपनीयता और सुरक्षा (Privacy & Security)</p>
+                <p className="font-medium text-green-900 mb-1">🔒 Privacy & Security</p>
                 <p className="text-green-700">
-                  आपकी सारी जानकारी पूरी तरह सुरक्षित और गुप्त रखी जाएगी। हमारा AI आपकी समस्या को समझकर सबसे अच्छे सुझाव और एक्सपर्ट देगा।
+                  All your information will be kept completely safe and confidential. Our AI will understand your problem and provide the best suggestions and experts.
                 </p>
               </div>
             </div>
@@ -257,13 +257,13 @@ export default function ProblemSubmissionModal({
               onClick={onClose}
               className="flex-1 min-h-[48px] text-sm sm:text-base"
             >
-              रद्द करें (Cancel)
+              Cancel
             </Button>
             <Button
               type="submit"
               className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 min-h-[48px] text-sm sm:text-base"
             >
-              🤖 AI से मदद लें (Get AI Help)
+              🤖 Get AI Help
             </Button>
           </div>
         </form>
