@@ -13,6 +13,8 @@ import {
   Linkedin,
 } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/context/AuthContent";
+
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +23,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user } = useAuth();
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
@@ -80,6 +83,16 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center space-x-3">
+              {user ?(
+                <Button
+                  size="sm"
+                  className="bg-[#5DADE2] hover:bg-[#3498DB] text-white rounded-full px-4 sm:px-6 py-2.5"
+                  asChild
+                >
+                  <Link to="/profile">Profile</Link>
+                </Button>
+              ) :  (
+                <>
               <Button
                 variant="ghost"
                 size="sm"
@@ -98,6 +111,8 @@ export default function Layout({ children }: LayoutProps) {
                   Get Started
                 </Link>
               </Button>
+              </>
+              )}
             </div>
 
             {/* Mobile menu button */}
@@ -143,6 +158,16 @@ export default function Layout({ children }: LayoutProps) {
 
               {/* Mobile Auth Buttons */}
               <div className="border-t border-[#D6EAF8] pt-4 space-y-3">
+                {user ? (
+                  <Button
+                    size="sm"
+                    className="w-full bg-[#5DADE2] hover:bg-[#3498DB] text-white rounded-xl py-3"
+                    asChild
+                  >
+                    <Link to="/profile">Profile</Link>
+                </Button>
+              ) : (
+               <>
                 <Button
                   variant="outline"
                   size="sm"
@@ -161,6 +186,8 @@ export default function Layout({ children }: LayoutProps) {
                     Get Started
                   </Link>
                 </Button>
+              </>
+              )}
               </div>
             </div>
           </div>

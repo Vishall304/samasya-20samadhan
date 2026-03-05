@@ -20,7 +20,7 @@ import {
 
 const CATEGORY_CONFIG = [
   { name: "All", icon: Brain, color: "bg-[#EAF2F8] text-[#1B4F72]" },
-  { name: "Mental Health", icon: Brain, color: "bg-purple-50 text-purple-700" },
+  { name: "Mental Health", icon: Brain, color: "bg-purple-50 text-blue-700" },
   { name: "Relationships", icon: Heart, color: "bg-rose-50 text-rose-700" },
   { name: "Work & Study", icon: GraduationCap, color: "bg-blue-50 text-blue-700" },
   { name: "Financial Stress", icon: DollarSign, color: "bg-emerald-50 text-emerald-700" },

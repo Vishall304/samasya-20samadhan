@@ -78,7 +78,7 @@ export default function AIResponseChat({
         {
           id: "counselor-singh",
           name: "Rajesh Singh",
-          specialty: "Workplace Stress Expert",
+          specialty: "Relationship Expert",
           rating: 4.8,
           responseTime: "Usually responds in 4 hours",
           languages: ["Hindi", "English", "Punjabi"],

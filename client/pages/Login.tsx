@@ -6,6 +6,10 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeOff, Mail, Lock, Heart } from "lucide-react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/services/firebase";
+import { toast } from "sonner";
+
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,15 +19,24 @@ export default function Login() {
   });
 
   const navigate = useNavigate();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Login attempt:", formData);
-    // Here you would handle actual login (Firebase / API)
-    // For now, simulate success and redirect to home
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      formData.email,
+      formData.password
+    );
+
+    toast.success("Login Successful ✅");
+
     navigate("/");
-  };
-
+  } catch (error) {
+    toast.error("Login Failed ❌");
+    console.error(error);
+  }
+};
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
