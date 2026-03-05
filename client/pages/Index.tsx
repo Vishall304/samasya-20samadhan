@@ -1,0 +1,513 @@
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import Layout from "@/components/Layout";
+import ProblemSubmissionModal from "@/components/ProblemSubmissionModal";
+import AIResponseChat from "@/components/AIResponseChat";
+import {
+  ArrowRight,
+  CheckCircle,
+  MessageSquare,
+  Users,
+  Clock,
+  Star,
+  Brain,
+  Heart,
+  GraduationCap,
+  Globe,
+  Dumbbell,
+  Smile,
+  Coffee,
+  DollarSign,
+  Mic,
+  MicOff,
+} from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function Index() {
+  const [formData, setFormData] = useState({
+    title: "",
+    category: "",
+    description: "",
+    urgency: "",
+    contactEmail: "",
+  });
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [aiAnalysisOpen, setAiAnalysisOpen] = useState(false);
+  const [submittedData, setSubmittedData] = useState<any>(null);
+  const [isListening, setIsListening] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<{
+    title: string;
+    icon: any;
+    color: string;
+  } | null>(null);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log("Problem submitted:", formData);
+    // Show success message or redirect
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const startListening = () => {
+    if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+      const SpeechRecognition =
+        (window as any).webkitSpeechRecognition ||
+        (window as any).SpeechRecognition;
+      const recognition = new SpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = "hi-IN"; // Hindi language
+
+      recognition.onstart = () => {
+        setIsListening(true);
+      };
+
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        setFormData((prev) => ({
+          ...prev,
+          description:
+            prev.description + (prev.description ? " " : "") + transcript,
+        }));
+      };
+
+      recognition.onerror = (event: any) => {
+        console.error("Speech recognition error:", event.error);
+        setIsListening(false);
+        if (event.error === "not-allowed") {
+          alert("माइक्रोफोन की अनुमति दें (Please allow microphone access)");
+        }
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      recognition.start();
+    } else {
+      alert(
+        "आपका browser speech recognition को support नहीं करता (Your browser does not support speech recognition)",
+      );
+    }
+  };
+
+  const categories = [
+    "Mental Health",
+    "Physical Wellness",
+    "Relationships",
+    "Career & Student Life",
+    "Other Issues",
+  ];
+
+  const stats = [
+    { number: "500+", label: "Problems Solved" },
+    { number: "100+", label: "Happy People" },
+    { number: "100%", label: "Safe & Private" },
+    { number: "24h", label: "Quick Response" },
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="py-16 md:py-24 relative">
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            {/* Friendly Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white shadow-sm border border-[#D6EAF8] mb-8">
+              <Smile className="w-4 h-4 text-[#5DADE2] mr-2" />
+              <span className="text-sm font-medium text-purple-700">
+                Safe, Anonymous & Caring
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1B4F72] leading-tight">
+              Hey, we get it.{" "}
+              <span className="text-[#5DADE2]">Every problem</span> has a
+              solution
+            </h1>
+
+            {/* Engaging subtitle */}
+            <div className="max-w-4xl mx-auto mb-12 text-center px-4">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
+                Don't worry, we are here for you. Whatever challenge you're
+                facing, you don't have to go through it alone.
+              </p>
+              <p className="text-base sm:text-lg text-[#1B4F72] font-medium">
+                Share what's on your mind. Connect with caring experts. Feel
+                supported again. ✨
+              </p>
+            </div>
+
+            {/* Quick Input Prompt - Enhanced Styling */}
+            <div className="max-w-3xl mx-auto mb-10 relative">
+              {/* Floating Background Elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl"></div>
+
+              <div className="relative bg-white rounded-2xl sm:rounded-3xl border border-[#D6EAF8] p-6 sm:p-8 md:p-10 shadow-[0_18px_45px_rgba(31,97,141,0.08)] transition-all duration-300 hover:shadow-[0_22px_60px_rgba(31,97,141,0.12)] mx-4 sm:mx-0">
+                {/* Gradient Border Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-2xl sm:rounded-3xl opacity-100 transition-opacity duration-300"></div>
+
+                <div className="relative">
+                  {/* Enhanced Header */}
+                  <div className="text-center mb-6">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">
+                      What's on your mind today?
+                    </h3>
+                    <p className="text-gray-500 text-sm">
+                      Share anything that's bothering you. We're here to listen.
+                    </p>
+                  </div>
+
+                  {/* Enhanced Textarea */}
+                  <div className="relative mb-6">
+                    <textarea
+                      placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
+                    className="w-full h-32 sm:h-36 px-4 sm:px-6 py-4 sm:py-5 pr-12 sm:pr-16 rounded-xl sm:rounded-2xl border border-[#D6EAF8] bg-white focus:border-[#5DADE2] focus:ring-4 focus:ring-[#5DADE2]/20 outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed"
+                      value={formData.description}
+                      onChange={(e) =>
+                        handleInputChange("description", e.target.value)
+                      }
+                    />
+                    {/* Microphone Button */}
+                    <button
+                      type="button"
+                      onClick={startListening}
+                      disabled={isListening}
+                      className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isListening
+                          ? "bg-red-500 text-white animate-pulse"
+                          : "bg-[#5DADE2] hover:bg-[#3498DB] text-white"
+                      }`}
+                      title={
+                        isListening
+                          ? "सुन रहा है... (Listening...)"
+                          : "बोलकर बताएं (Click to speak)"
+                      }
+                    >
+                      {isListening ? (
+                        <MicOff className="w-4 h-4" />
+                      ) : (
+                        <Mic className="w-4 h-4" />
+                      )}
+                    </button>
+                    {/* Character count or helpful text */}
+                    <div className="absolute bottom-3 right-4 text-xs text-gray-400 hidden sm:block">
+                      {isListening
+                        ? "सुन रहा है... (Listening...)"
+                        : "Press Enter for new line"}
+                    </div>
+                  </div>
+
+                  {/* Enhanced Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <Button
+                      className="flex-1 bg-[#5DADE2] hover:bg-[#3498DB] text-white rounded-xl sm:rounded-2xl py-3 sm:py-4 px-6 sm:px-8 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 text-base sm:text-lg font-semibold min-h-[48px]"
+                      onClick={() => {
+                        if (formData.description.trim()) {
+                          setSelectedCategory({
+                            title: "General Support",
+                            icon: Heart,
+                            color: "bg-purple-100 text-purple-600",
+                          });
+                          setModalOpen(true);
+                        } else {
+                          // Scroll to categories if no description
+                          document
+                            .getElementById("problem-categories")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
+                    >
+                      <Heart className="mr-3 h-5 w-5" />
+                      Get Help With This
+                      <ArrowRight className="ml-3 h-5 w-5" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border border-[#5DADE2] text-[#1B4F72] hover:bg-[#EBF5FB] hover:border-[#3498DB] rounded-xl sm:rounded-2xl py-3 sm:py-4 px-6 sm:px-8 transition-all duration-300 hover:scale-105 text-base sm:text-lg font-semibold bg-white min-h-[48px]"
+                      asChild
+                    >
+                      <Link to="/mentor">
+                        <Users className="mr-2 h-5 w-5" />
+                        Browse Experts
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Quick Trust Indicators */}
+                  <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-purple-100">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full shadow-sm"></div>
+                      <span>Completely Anonymous</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full shadow-sm"></div>
+                      <span>Safe & Secure</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Info */}
+            <div className="text-center mb-16">
+              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span>100% Anonymous</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span>Safe & Secure</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span>No Judgment</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Simple Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-[#E5E7EB] shadow-sm"
+                >
+                  <div className="text-xl sm:text-2xl font-bold text-[#1B4F72] mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-xs sm:text-sm text-gray-600">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Categories */}
+      <section id="problem-categories" className="py-20 relative">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B4F72]">
+              What's on your mind?
+            </h2>
+            <p className="text-lg text-gray-600">
+              Whatever it is, we've probably helped someone with something
+              similar
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto px-4">
+            {[
+              {
+                icon: Brain,
+                title: "Mental Health",
+                description:
+                  "Stress, anxiety, feeling overwhelmed, or just need someone to listen",
+                color: "bg-purple-100 text-purple-600",
+                borderColor: "border-purple-200",
+              },
+              {
+                icon: Dumbbell,
+                title: "Physical Wellness",
+                description:
+                  "Sleep problems, energy issues, body pain, or health concerns",
+                color: "bg-green-100 text-green-600",
+                borderColor: "border-green-200",
+              },
+              {
+                icon: Heart,
+                title: "Relationships",
+                description:
+                  "Family drama, breakups, friendship issues, or feeling lonely",
+                color: "bg-red-100 text-red-600",
+                borderColor: "border-red-200",
+              },
+              {
+                icon: GraduationCap,
+                title: "Work & Study",
+                description:
+                  "Job stress, exam pressure, career confusion, or burnout",
+                color: "bg-blue-100 text-blue-600",
+                borderColor: "border-blue-200",
+              },
+              {
+                icon: DollarSign,
+                title: "Financial Stress",
+                description:
+                  "Money worries, debt issues, budgeting problems, or financial planning",
+                color: "bg-emerald-100 text-emerald-600",
+                borderColor: "border-emerald-200",
+              },
+              {
+                icon: Globe,
+                title: "Life Stuff",
+                description:
+                  "Identity questions, motivation, bad habits, or just figuring things out",
+                color: "bg-orange-100 text-orange-600",
+                borderColor: "border-orange-200",
+              },
+            ].map((category, index) => {
+              const Icon = category.icon;
+              return (
+                <Card
+                  key={index}
+                  className="hover:shadow-xl transition-all duration-300 cursor-pointer border border-[#E5E7EB] bg-white rounded-2xl"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div
+                      className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full ${category.color} mb-4`}
+                    >
+                      <Icon className="h-7 w-7" />
+                    </div>
+
+                    <h3 className="text-lg font-semibold text-[#1B4F72] mb-3">
+                      {category.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {category.description}
+                    </p>
+
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="mt-4 text-[#5DADE2] hover:bg-[#EBF5FB] hover:text-[#1B4F72]"
+                      onClick={() => {
+                        setSelectedCategory({
+                          title: category.title,
+                          icon: category.icon,
+                          color: category.color,
+                        });
+                        setModalOpen(true);
+                      }}
+                    >
+                      Get help with this
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works - Simple */}
+      <section className="py-20 relative">
+        <div className="container">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B4F72]">
+              How it works
+            </h2>
+            <p className="text-lg text-gray-600">
+              It's pretty simple, actually
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+            {[
+              {
+                step: "1",
+                title: "Tell us what's up",
+                description:
+                  "Share what's bothering you - as much or as little as you want. It's completely anonymous.",
+              },
+              {
+                step: "2",
+                title: "We match you up",
+                description:
+                  "Our team finds the right person to help based on what you're going through.",
+              },
+              {
+                step: "3",
+                title: "Get the support you need",
+                description:
+                  "Chat with someone who gets it, get advice, or just have someone listen.",
+              },
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#5DADE2] text-white mb-6 text-xl font-bold shadow-md">
+                  {step.step}
+                </div>
+
+                <h3 className="text-xl font-semibold text-[#1B4F72] mb-4">
+                  {step.title}
+                </h3>
+
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Submission Modal */}
+      <ProblemSubmissionModal
+        isOpen={modalOpen}
+        onClose={() => {
+          setModalOpen(false);
+          setSelectedCategory(null);
+        }}
+        selectedCategory={selectedCategory?.title}
+        categoryIcon={selectedCategory?.icon}
+        categoryColor={selectedCategory?.color}
+        problemDescription={formData.description}
+        onSubmitSuccess={(data) => {
+          setModalOpen(false);
+          setSelectedCategory(null);
+          setSubmittedData(data);
+          setAiAnalysisOpen(true);
+        }}
+      />
+
+      {/* AI Chat Response */}
+      <AIResponseChat
+        isOpen={aiAnalysisOpen}
+        onClose={() => {
+          setAiAnalysisOpen(false);
+          setSubmittedData(null);
+        }}
+        problemText={submittedData?.description || ""}
+        category={submittedData?.category || ""}
+        userInfo={submittedData || {}}
+        onConnectExpert={(expertId) => {
+          console.log("Connecting with expert:", expertId);
+          // Handle expert connection
+          setAiAnalysisOpen(false);
+          setSubmittedData(null);
+          // You can redirect to expert chat or show success message
+        }}
+      />
+    </Layout>
+  );
+}
