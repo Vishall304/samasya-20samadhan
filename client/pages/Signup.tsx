@@ -45,6 +45,7 @@ export default function Signup() {
     console.log("User created:", userCredential.user);
 
     alert("Signup successful 🎉");
+    navigate("/");
 
     // Optional: redirect to login
     // navigate("/login");

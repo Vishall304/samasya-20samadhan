@@ -105,11 +105,11 @@ export default function About() {
               About SamasyaSamadhan
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               We believe every <span className="text-purple-300">problem</span> has a solution
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
               SamasyaSamadhan was born from a simple truth: nobody should face their struggles alone. 
               We've created a safe, anonymous space where real people can get real help from qualified experts.
             </p>
@@ -144,15 +144,15 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Our Story
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-lg text-foreground">
                 How we started and why we're here
               </p>
             </div>
 
-            <Card className="bg-white/10 backdrop-blur-sm border border-white/20 mb-12">
+            <Card className="bg-white shadow-lg border border-gray-200">
               <CardContent className="p-8 md:p-12">
                 <div className="prose prose-lg max-w-none">
                   <p className="text-white/90 leading-relaxed mb-6 text-lg">
@@ -182,10 +182,10 @@ export default function About() {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 What We Stand For
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-lg text-muted-foreground">
                 The values that guide everything we do
               </p>
             </div>
@@ -226,7 +226,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Our Expert Community
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-lg text-foreground">
                 Meet the qualified professionals ready to support you
               </p>
             </div>
@@ -242,7 +242,7 @@ export default function About() {
                           <Icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-white">
+                          <h3 className="text-lg font-semibold text-foreground">
                             {member.name}
                           </h3>
                           <Badge variant="secondary" className="bg-purple-100/20 text-purple-200">
@@ -267,10 +267,10 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Our Impact
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-gray-700">
                 Numbers that reflect our commitment to helping people
               </p>
             </div>
@@ -302,7 +302,7 @@ export default function About() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Our Achievements
               </h2>
               <p className="text-lg text-white/80">
@@ -334,7 +334,7 @@ export default function About() {
       <section className="py-20 relative">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               Ready to Be Part of Our Story?
             </h2>
             <p className="text-xl text-white/90 leading-relaxed mb-12">
@@ -354,7 +354,7 @@ export default function About() {
               </Button>
               <Button 
                 variant="outline" 
-                className="border-2 border-white/30 text-white hover:bg-white/10 rounded-2xl py-4 px-8 text-lg font-semibold"
+                className="border border-border text-foreground hover:bg-muted"
                 asChild
               >
                 <Link to="/how-it-works">
