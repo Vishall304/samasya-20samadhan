@@ -15,6 +15,7 @@ import {
   DollarSign,
   Dumbbell,
   Globe,
+  MessageSquare
 } from "lucide-react";
 
 const CATEGORY_CONFIG = [
