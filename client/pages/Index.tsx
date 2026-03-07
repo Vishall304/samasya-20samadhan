@@ -20,6 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/Layout";
 import ProblemSubmissionModal from "@/components/ProblemSubmissionModal";
 import AIResponseChat from "@/components/AIResponseChat";
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 import {
   ArrowRight,
   CheckCircle,
@@ -159,7 +160,7 @@ export default function Index() {
               </p>
               <p className="text-base sm:text-lg text-[#1B4F72] font-medium">
                 Share what's on your mind. Connect with caring experts. Feel
-                supported again. ✨
+                supported again. 
               </p>
             </div>
 
@@ -188,7 +189,7 @@ export default function Index() {
                   <div className="relative mb-6">
                     <textarea
                       placeholder="Type anything... stress, family issues, work problems, exam pressure, relationship troubles, or whatever's on your mind. No judgment, just support. ✨"
-                    className="w-full h-32 sm:h-36 px-4 sm:px-6 py-4 sm:py-5 pr-12 sm:pr-16 rounded-xl sm:rounded-2xl border border-[#D6EAF8] bg-white focus:border-[#5DADE2] focus:ring-4 focus:ring-[#5DADE2]/20 outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed"
+                    className="w-full h-28 sm:h-32 md:h-36 px-4 sm:px-6 py-4 sm:py-5 pr-12 sm:pr-16 rounded-xl sm:rounded-2xl border border-[#D6EAF8] bg-white focus:border-[#5DADE2] focus:ring-4 focus:ring-[#5DADE2]/20 outline-none resize-none text-gray-700 placeholder-gray-400 transition-all duration-300 text-sm sm:text-base leading-relaxed"
                       value={formData.description}
                       onChange={(e) =>
                         handleInputChange("description", e.target.value)
@@ -294,7 +295,7 @@ export default function Index() {
             </div>
 
             {/* Simple Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto px-4">
               {stats.map((stat, index) => (
                 <div
                   key={index}
@@ -315,7 +316,7 @@ export default function Index() {
 
       {/* Problem Categories */}
       <section id="problem-categories" className="py-20 relative">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B4F72]">
               What's on your mind?
@@ -424,7 +425,7 @@ export default function Index() {
 
       {/* How It Works - Simple */}
       <section className="py-20 relative">
-        <div className="container">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B4F72]">
               How it works

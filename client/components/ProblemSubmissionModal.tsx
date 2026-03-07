@@ -1,3 +1,5 @@
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import {
   Dialog,
   DialogContent,
@@ -95,7 +97,7 @@ export default function ProblemSubmissionModal({
               Our AI is analyzing your problem and preparing the best suggestions for you...
             </p>
             <div className="text-sm text-gray-500">
-              We're also finding the perfect expert for you ✨
+              We're also finding the perfect expert for you 
             </div>
           </div>
         </DialogContent>
@@ -182,14 +184,19 @@ export default function ProblemSubmissionModal({
                   <Label htmlFor="phoneNumber" className="text-sm font-medium">
                     Mobile Number *
                   </Label>
-                  <Input
-                    id="phoneNumber"
-                    type="tel"
-                    placeholder="+91 XXXXX XXXXX"
+                  <PhoneInput
+                    country={"in"}
+                    enableSearch={true}
                     value={formData.phoneNumber}
-                    onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
-                    required
-                    className="h-11"
+                    onChange={(phone) => handleInputChange("phoneNumber", phone)}
+                    inputStyle={{
+                      width: "100%",
+                      height: "44px",
+                      borderRadius: "8px",
+                    }}
+                    containerStyle={{
+                      width: "100%",
+                     }}
                   />
                 </div>
                 
@@ -241,7 +248,7 @@ export default function ProblemSubmissionModal({
                 <div className="w-2 h-2 bg-white rounded-full"></div>
               </div>
               <div className="text-sm">
-                <p className="font-medium text-green-900 mb-1">🔒 Privacy & Security</p>
+                <p className="font-medium text-green-900 mb-1"> Privacy & Security</p>
                 <p className="text-green-700">
                   All your information will be kept completely safe and confidential. Our AI will understand your problem and provide the best suggestions and experts.
                 </p>

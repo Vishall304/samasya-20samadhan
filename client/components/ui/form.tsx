@@ -1,3 +1,5 @@
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";

@@ -105,11 +105,11 @@ export default function About() {
               About SamasyaSamadhan
             </Badge>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               We believe every <span className="text-purple-300">problem</span> has a solution
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-4xl md:text-2xl text-muted-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
               SamasyaSamadhan was born from a simple truth: nobody should face their struggles alone. 
               We've created a safe, anonymous space where real people can get real help from qualified experts.
             </p>
@@ -147,7 +147,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Our Story
               </h2>
-              <p className="text-lg text-foreground">
+              <p className="text-gray-700">
                 How we started and why we're here
               </p>
             </div>
@@ -155,19 +155,19 @@ export default function About() {
             <Card className="bg-white shadow-lg border border-gray-200">
               <CardContent className="p-8 md:p-12">
                 <div className="prose prose-lg max-w-none">
-                  <p className="text-white/90 leading-relaxed mb-6 text-lg">
+                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
                     <strong className="text-purple-300">SamasyaSamadhan started with a personal realization:</strong> too many people suffer in silence because they don't know where to turn for help, or they're afraid of being judged.
                   </p>
                   
-                  <p className="text-white/80 leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     We saw friends, family members, and colleagues struggling with mental health challenges, relationship issues, work stress, and life problems - but hesitating to seek help because of stigma, cost, or simply not knowing where to start.
                   </p>
                   
-                  <p className="text-white/80 leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     That's when we decided to build something different. A platform where anyone could anonymously share their problems and get connected with qualified experts who genuinely care. No judgment, no lengthy procedures, no barriers - just real support when you need it most.
                   </p>
                   
-                  <p className="text-purple-200 leading-relaxed font-medium">
+                  <p className="text-purple-600 leading-relaxed font-medium">
                     Today, we're proud to be India's most trusted anonymous mental health support platform, helping over 1000+ individuals find their path to healing and happiness.
                   </p>
                 </div>
@@ -201,10 +201,10 @@ export default function About() {
                           <Icon className="w-7 h-7 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold text-white mb-3">
+                          <h3 className="text-xl font-semibold text-gray-900 mb-3">
                             {value.title}
                           </h3>
-                          <p className="text-white/80 leading-relaxed">
+                          <p className="text-gray-600 leading-relaxed">
                             {value.description}
                           </p>
                         </div>
@@ -223,7 +223,7 @@ export default function About() {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
                 Our Expert Community
               </h2>
               <p className="text-lg text-foreground">
@@ -235,22 +235,23 @@ export default function About() {
               {team.map((member, index) => {
                 const Icon = member.icon;
                 return (
-                  <Card key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <Card key={index} className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                          <Icon className="w-6 h-6 text-white" />
+                           <Icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-foreground">
-                            {member.name}
+                          <h3 className="text-lg font-semibold text-gray-900">
+                           {member.name}
                           </h3>
-                          <Badge variant="secondary" className="bg-purple-100/20 text-purple-200">
+                          <Badge className="bg-purple-100 text-purple-700">
                             {member.count} Available
                           </Badge>
                         </div>
-                      </div>
-                      <p className="text-white/70 text-sm">
+                     </div>
+
+                      <p className="text-gray-600 text-sm">
                         {member.description}
                       </p>
                     </CardContent>
@@ -264,7 +265,7 @@ export default function About() {
 
       {/* Stats */}
       <section className="py-20 relative">
-        <div className="container">
+        <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
@@ -287,7 +288,7 @@ export default function About() {
                       <div className="text-2xl font-bold text-purple-300 mb-1">
                         {stat.number}
                       </div>
-                      <div className="text-sm text-white/80">{stat.label}</div>
+                      <div className="text-sm text-gray-600 ">{stat.label}</div>
                     </CardContent>
                   </Card>
                 );
@@ -305,7 +306,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
                 Our Achievements
               </h2>
-              <p className="text-lg text-white/80">
+              <p className="text-lg text-gray-600">
                 Milestones we're proud of
               </p>
             </div>
@@ -318,7 +319,7 @@ export default function About() {
                       <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckCircle className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-white/90 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed">
                         {achievement}
                       </p>
                     </div>
@@ -337,7 +338,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               Ready to Be Part of Our Story?
             </h2>
-            <p className="text-xl text-white/90 leading-relaxed mb-12">
+            <p className="text-gray-700 leading-relaxed mb-12">
               Join thousands of people who've found support, guidance, and hope through SamasyaSamadhan. 
               Your journey to feeling better starts with sharing what's on your mind.
             </p>
@@ -365,7 +366,7 @@ export default function About() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex items-center justify-center gap-8 mt-12 text-sm text-white/70">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-12 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <Smile className="w-4 h-4 text-green-400" />
                 <span>1000+ Happy Users</span>

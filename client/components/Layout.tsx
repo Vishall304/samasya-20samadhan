@@ -40,8 +40,8 @@ export default function Layout({ children }: LayoutProps) {
       <div className="relative z-10">
       {/* Header */}
       <header className="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-lg border-b border-[#D6EAF8] shadow-lg">
-        <div className="container px-4 sm:px-6">
-          <div className="flex h-16 sm:h-18 items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 sm:h-20 items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 group">
               <div className="flex items-center space-x-3">
@@ -52,7 +52,7 @@ export default function Layout({ children }: LayoutProps) {
                     className="w-8 h-8 object-contain"
                   />
                 </div>
-                <div className="text-xl sm:text-2xl font-bold">
+                <div className="text-lg sm:text-xl md:text-2xl font-bold">
                   <span className="text-[#2E86C1]">Samasya</span>
                   <span className="text-[#5DADE2]">Samadhan</span>
                 </div>
@@ -132,7 +132,7 @@ export default function Layout({ children }: LayoutProps) {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-[#D6EAF8] bg-white/95 backdrop-blur">
-            <div className="container py-6 space-y-4">
+            <div className="max-w-7xl mx-auto px-4 py-6 space-y-4">
               {/* Mobile Navigation Links */}
               <div className="space-y-2">
                 {navigation.map((item) => {
@@ -200,8 +200,8 @@ export default function Layout({ children }: LayoutProps) {
       {/* Footer */}
       <footer className="relative overflow-hidden mt-12 bg-white border-t border-[#D6EAF8]">
         <div className="relative">
-          <div className="container py-12 sm:py-16 px-4 sm:px-6">
-            <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Brand Section */}
               <div className="lg:col-span-2 space-y-6">
                 <div className="flex items-center space-x-4">
