@@ -183,7 +183,7 @@ export default function Layout({ children }: LayoutProps) {
                 >
                   <Link to="/signup">
                     <Sparkles className="w-4 h-4 mr-2" />
-                    Get Started
+                    Get Started   
                   </Link>
                 </Button>
               </>
